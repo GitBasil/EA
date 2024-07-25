@@ -1,0 +1,12 @@
+### Calculate operation
+POST http://localhost:8080/calc
+Content-Type: application/json
+
+{
+    "number1": 1,
+    "number2": 2,
+    "operation": "+"
+}
+
+### Test endpoint
+GET http://localhost:8080/test

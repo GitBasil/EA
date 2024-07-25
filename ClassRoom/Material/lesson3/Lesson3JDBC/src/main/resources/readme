@@ -1,0 +1,7 @@
+First you need to create the table in the database:
+
+CREATE TABLE product (
+  number INTEGER PRIMARY KEY,
+  name VARCHAR(50),
+  price DOUBLE
+);

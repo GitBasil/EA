@@ -1,0 +1,46 @@
+### testJmsSender
+GET http://localhost:8081/demo/Testing/testSender/JMS
+
+### testKafkaSender
+GET http://localhost:8081/demo/Testing/testSender/KAFKA
+
+### testEventListener
+GET http://localhost:8081/demo/Testing/testSender/EventPublisher
+
+### testApplicationProperties
+GET http://localhost:8081/demo/Testing/testConfig?name=applicationProperties
+
+### testLogs
+GET http://localhost:8081/demo/Testing/testConfig?name=logs
+
+### Test actuator
+GET http://localhost:8081/demo/actuator/health
+
+### GET Path Variable
+GET http://localhost:8081/demo/Testing/getWithVar/basil
+
+### GET Request Param
+GET http://localhost:8081/demo/Testing/getWithParam?name=basil
+
+### GET Request Param
+GET http://localhost:8081/demo/Testing/getReturnClass?name=basil
+
+
+### Post with json
+POST http://localhost:8081/demo/Testing/PostWithJson?name=basil
+Content-Type: application/json
+
+{
+    "message": "Testing PostWithJson"
+}
+
+### Put with json
+PUT http://localhost:8081/demo/Testing/PutWithJson
+Content-Type: application/json
+
+{
+    "message": "Testing PutWithJson"
+}
+
+### DELETE Path Variable
+DELETE http://localhost:8081/demo/Testing/DeleteWithVar/basil`

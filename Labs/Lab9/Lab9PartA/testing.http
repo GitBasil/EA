@@ -1,0 +1,33 @@
+### Add New Book
+POST http://localhost:8080/books
+Content-Type: application/json
+
+{
+    "isbn": "1",
+    "author": "2",
+    "title": "3",
+    "price": 4
+}
+
+### Update Book
+PUT http://localhost:8080/books
+Content-Type: application/json
+
+{
+    "isbn": "1",
+    "author": "2",
+    "title": "3",
+    "price": 4
+}
+
+### Delete book by isbn
+DELETE http://localhost:8080/books/3
+
+### Get Book by isbn
+GET http://localhost:8080/books/3
+
+### Get All Books
+GET http://localhost:8080/books
+
+### Get All Books
+GET http://localhost:8080/books/search?author=basil

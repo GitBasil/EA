@@ -1,0 +1,8 @@
+When we use eager loading the data get pulled from the database immediately, but this could get very expensive when dealing with large data.
+The solution fot this is to use Lazy loading, but with lazy loading you need to have the persistent context opened in order to get the data from the database. 
+This will cause an error if you are trying to print an Lazy loaded object. 
+To solve this we can use @Transitional, by using it the persistent context will remain opened the whole time. 
+So when you try to read a Lazy loaded object the persistent context is already opened and the application will be able to pull the data when you need it.
+
+When you try to return the object with it's entries from the service you need to use a DTO otherwise you get a lazy exception. 
+because you returned the object with empty list because at the point when the persistent context was open you did'nt ask for the child.

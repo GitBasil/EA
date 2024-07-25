@@ -1,0 +1,293 @@
+2024-07-12T20:54:08.206-05:00  INFO 43571 --- [FinalPractice ] [main] FinalPractice.FinalPracticeApplication   : Starting FinalPracticeApplication using Java 17.0.11 with PID 43571 (/Users/baselabubaker/Desktop/MIU/EA/EA exams/final/FinalPractice /target/classes started by baselabubaker in /Users/baselabubaker/Desktop/MIU/EA/EA exams/final/FinalPractice )
+2024-07-12T20:54:08.211-05:00  INFO 43571 --- [FinalPractice ] [main] FinalPractice.FinalPracticeApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-07-12T20:54:09.091-05:00  INFO 43571 --- [FinalPractice ] [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2024-07-12T20:54:09.107-05:00  INFO 43571 --- [FinalPractice ] [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2024-07-12T20:54:09.660-05:00  INFO 43571 --- [FinalPractice ] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2024-07-12T20:54:09.674-05:00  INFO 43571 --- [FinalPractice ] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-12T20:54:09.675-05:00  INFO 43571 --- [FinalPractice ] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-12T20:54:09.755-05:00  INFO 43571 --- [FinalPractice ] [main] o.a.c.c.C.[Tomcat].[localhost].[/demo]   : Initializing Spring embedded WebApplicationContext
+2024-07-12T20:54:09.756-05:00  INFO 43571 --- [FinalPractice ] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1449 ms
+2024-07-12T20:54:10.826-05:00  INFO 43571 --- [FinalPractice ] [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2024-07-12T20:54:10.827-05:00  INFO 43571 --- [FinalPractice ] [main] o.s.i.channel.PublishSubscribeChannel    : Channel 'FinalPractice .errorChannel' has 1 subscriber(s).
+2024-07-12T20:54:10.827-05:00  INFO 43571 --- [FinalPractice ] [main] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
+2024-07-12T20:54:10.861-05:00  INFO 43571 --- [FinalPractice ] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/demo'
+2024-07-12T20:54:10.903-05:00  INFO 43571 --- [FinalPractice ] [main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-gid-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = gid
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2024-07-12T20:54:10.959-05:00  INFO 43571 --- [FinalPractice ] [main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2024-07-12T20:54:11.113-05:00  INFO 43571 --- [FinalPractice ] [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.7.0
+2024-07-12T20:54:11.115-05:00  INFO 43571 --- [FinalPractice ] [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 2ae524ed625438c5
+2024-07-12T20:54:11.115-05:00  INFO 43571 --- [FinalPractice ] [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1720835651110
+2024-07-12T20:54:11.120-05:00  INFO 43571 --- [FinalPractice ] [main] o.a.k.c.c.internals.LegacyKafkaConsumer  : [Consumer clientId=consumer-gid-1, groupId=gid] Subscribed to topic(s): topicA
+2024-07-12T20:54:11.132-05:00  INFO 43571 --- [FinalPractice ] [main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-gid2-2
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = gid2
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2024-07-12T20:54:11.133-05:00  INFO 43571 --- [FinalPractice ] [main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2024-07-12T20:54:11.157-05:00  INFO 43571 --- [FinalPractice ] [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.7.0
+2024-07-12T20:54:11.158-05:00  INFO 43571 --- [FinalPractice ] [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 2ae524ed625438c5
+2024-07-12T20:54:11.159-05:00  INFO 43571 --- [FinalPractice ] [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1720835651157
+2024-07-12T20:54:11.160-05:00  INFO 43571 --- [FinalPractice ] [main] o.a.k.c.c.internals.LegacyKafkaConsumer  : [Consumer clientId=consumer-gid2-2, groupId=gid2] Subscribed to topic(s): topicA
+2024-07-12T20:54:11.378-05:00  INFO 43571 --- [FinalPractice ] [main] FinalPractice.FinalPracticeApplication   : Started FinalPracticeApplication in 3.647 seconds (process running for 4.137)
+2024-07-12T20:54:11.581-05:00  INFO 43571 --- [FinalPractice ] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-gid2-2, groupId=gid2] Cluster ID: G1sxKltzR5SKZazj_CFmnQ
+2024-07-12T20:54:11.581-05:00  INFO 43571 --- [FinalPractice ] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-gid-1, groupId=gid] Cluster ID: G1sxKltzR5SKZazj_CFmnQ
+2024-07-12T20:54:11.585-05:00  INFO 43571 --- [FinalPractice ] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid2-2, groupId=gid2] Discovered group coordinator basels-mbp-2.lan:9092 (id: 2147483647 rack: null)
+2024-07-12T20:54:11.585-05:00  INFO 43571 --- [FinalPractice ] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Discovered group coordinator basels-mbp-2.lan:9092 (id: 2147483647 rack: null)
+2024-07-12T20:54:11.590-05:00  INFO 43571 --- [FinalPractice ] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] (Re-)joining group
+2024-07-12T20:54:11.590-05:00  INFO 43571 --- [FinalPractice ] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid2-2, groupId=gid2] (Re-)joining group
+2024-07-12T20:54:11.611-05:00  INFO 43571 --- [FinalPractice ] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid2-2, groupId=gid2] Request joining group due to: need to re-join with the given member-id: consumer-gid2-2-c8e31aa9-f81b-4be6-83fd-c316cc583f12
+2024-07-12T20:54:11.611-05:00  INFO 43571 --- [FinalPractice ] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Request joining group due to: need to re-join with the given member-id: consumer-gid-1-54a87de4-a03c-4842-85b2-a005c8928273
+2024-07-12T20:54:11.612-05:00  INFO 43571 --- [FinalPractice ] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid2-2, groupId=gid2] (Re-)joining group
+2024-07-12T20:54:11.612-05:00  INFO 43571 --- [FinalPractice ] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] (Re-)joining group
+2024-07-12T20:54:11.615-05:00  INFO 43571 --- [FinalPractice ] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid2-2, groupId=gid2] Successfully joined group with generation Generation{generationId=31, memberId='consumer-gid2-2-c8e31aa9-f81b-4be6-83fd-c316cc583f12', protocol='range'}
+2024-07-12T20:54:11.615-05:00  INFO 43571 --- [FinalPractice ] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Successfully joined group with generation Generation{generationId=144, memberId='consumer-gid-1-54a87de4-a03c-4842-85b2-a005c8928273', protocol='range'}
+2024-07-12T20:54:11.629-05:00  INFO 43571 --- [FinalPractice ] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Finished assignment for group at generation 144: {consumer-gid-1-54a87de4-a03c-4842-85b2-a005c8928273=Assignment(partitions=[topicA-0])}
+2024-07-12T20:54:11.629-05:00  INFO 43571 --- [FinalPractice ] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid2-2, groupId=gid2] Finished assignment for group at generation 31: {consumer-gid2-2-c8e31aa9-f81b-4be6-83fd-c316cc583f12=Assignment(partitions=[topicA-0])}
+2024-07-12T20:54:11.641-05:00  INFO 43571 --- [FinalPractice ] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid2-2, groupId=gid2] Successfully synced group in generation Generation{generationId=31, memberId='consumer-gid2-2-c8e31aa9-f81b-4be6-83fd-c316cc583f12', protocol='range'}
+2024-07-12T20:54:11.641-05:00  INFO 43571 --- [FinalPractice ] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Successfully synced group in generation Generation{generationId=144, memberId='consumer-gid-1-54a87de4-a03c-4842-85b2-a005c8928273', protocol='range'}
+2024-07-12T20:54:11.642-05:00  INFO 43571 --- [FinalPractice ] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid2-2, groupId=gid2] Notifying assignor about the new Assignment(partitions=[topicA-0])
+2024-07-12T20:54:11.642-05:00  INFO 43571 --- [FinalPractice ] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Notifying assignor about the new Assignment(partitions=[topicA-0])
+2024-07-12T20:54:11.646-05:00  INFO 43571 --- [FinalPractice ] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-gid2-2, groupId=gid2] Adding newly assigned partitions: topicA-0
+2024-07-12T20:54:11.646-05:00  INFO 43571 --- [FinalPractice ] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-gid-1, groupId=gid] Adding newly assigned partitions: topicA-0
+2024-07-12T20:54:11.662-05:00  INFO 43571 --- [FinalPractice ] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerUtils        : Setting offset for partition topicA-0 to the committed offset FetchPosition{offset=19, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[basels-mbp-2.lan:9092 (id: 0 rack: null)], epoch=0}}
+2024-07-12T20:54:11.662-05:00  INFO 43571 --- [FinalPractice ] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerUtils        : Setting offset for partition topicA-0 to the committed offset FetchPosition{offset=19, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[basels-mbp-2.lan:9092 (id: 0 rack: null)], epoch=0}}
+2024-07-12T20:54:11.665-05:00  INFO 43571 --- [FinalPractice ] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : gid2: partitions assigned: [topicA-0]
+2024-07-12T20:54:11.665-05:00  INFO 43571 --- [FinalPractice ] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : gid: partitions assigned: [topicA-0]
+2024-07-12T20:54:23.087-05:00  INFO 43571 --- [FinalPractice ] [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/demo]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-12T20:54:23.088-05:00  INFO 43571 --- [FinalPractice ] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-07-12T20:54:23.089-05:00  INFO 43571 --- [FinalPractice ] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-07-12T20:54:23.131-05:00 TRACE 43571 --- [FinalPractice ] [http-nio-8081-exec-1] FinalPractice.services.LogsService       : A TRACE Message
+2024-07-12T20:54:23.132-05:00 DEBUG 43571 --- [FinalPractice ] [http-nio-8081-exec-1] FinalPractice.services.LogsService       : A DEBUG Message
+2024-07-12T20:54:23.132-05:00  INFO 43571 --- [FinalPractice ] [http-nio-8081-exec-1] FinalPractice.services.LogsService       : An INFO Message
+2024-07-12T20:54:23.132-05:00  WARN 43571 --- [FinalPractice ] [http-nio-8081-exec-1] FinalPractice.services.LogsService       : A WARN Message
+2024-07-12T20:54:23.132-05:00 ERROR 43571 --- [FinalPractice ] [http-nio-8081-exec-1] FinalPractice.services.LogsService       : An ERROR Message
+2024-07-12T20:54:35.501-05:00  INFO 43571 --- [FinalPractice ] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-gid2-2, groupId=gid2] Revoke previously assigned partitions topicA-0
+2024-07-12T20:54:35.501-05:00  INFO 43571 --- [FinalPractice ] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-gid-1, groupId=gid] Revoke previously assigned partitions topicA-0
+2024-07-12T20:54:35.502-05:00  INFO 43571 --- [FinalPractice ] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : gid2: partitions revoked: [topicA-0]
+2024-07-12T20:54:35.502-05:00  INFO 43571 --- [FinalPractice ] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : gid: partitions revoked: [topicA-0]
+2024-07-12T20:54:35.503-05:00  INFO 43571 --- [FinalPractice ] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Member consumer-gid-1-54a87de4-a03c-4842-85b2-a005c8928273 sending LeaveGroup request to coordinator basels-mbp-2.lan:9092 (id: 2147483647 rack: null) due to the consumer unsubscribed from all topics
+2024-07-12T20:54:35.503-05:00  INFO 43571 --- [FinalPractice ] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid2-2, groupId=gid2] Member consumer-gid2-2-c8e31aa9-f81b-4be6-83fd-c316cc583f12 sending LeaveGroup request to coordinator basels-mbp-2.lan:9092 (id: 2147483647 rack: null) due to the consumer unsubscribed from all topics
+2024-07-12T20:54:35.504-05:00  INFO 43571 --- [FinalPractice ] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid2-2, groupId=gid2] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-07-12T20:54:35.504-05:00  INFO 43571 --- [FinalPractice ] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-07-12T20:54:35.504-05:00  INFO 43571 --- [FinalPractice ] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid2-2, groupId=gid2] Request joining group due to: consumer pro-actively leaving the group
+2024-07-12T20:54:35.504-05:00  INFO 43571 --- [FinalPractice ] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Request joining group due to: consumer pro-actively leaving the group
+2024-07-12T20:54:35.504-05:00  INFO 43571 --- [FinalPractice ] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.LegacyKafkaConsumer  : [Consumer clientId=consumer-gid2-2, groupId=gid2] Unsubscribed all topics or patterns and assigned partitions
+2024-07-12T20:54:35.504-05:00  INFO 43571 --- [FinalPractice ] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.LegacyKafkaConsumer  : [Consumer clientId=consumer-gid-1, groupId=gid] Unsubscribed all topics or patterns and assigned partitions
+2024-07-12T20:54:35.507-05:00  INFO 43571 --- [FinalPractice ] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid2-2, groupId=gid2] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-07-12T20:54:35.507-05:00  INFO 43571 --- [FinalPractice ] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-07-12T20:54:35.508-05:00  INFO 43571 --- [FinalPractice ] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Request joining group due to: consumer pro-actively leaving the group
+2024-07-12T20:54:35.508-05:00  INFO 43571 --- [FinalPractice ] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid2-2, groupId=gid2] Request joining group due to: consumer pro-actively leaving the group
+2024-07-12T20:54:35.551-05:00  INFO 43571 --- [FinalPractice ] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2024-07-12T20:54:35.551-05:00  INFO 43571 --- [FinalPractice ] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2024-07-12T20:54:35.551-05:00  INFO 43571 --- [FinalPractice ] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-07-12T20:54:35.551-05:00  INFO 43571 --- [FinalPractice ] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-07-12T20:54:35.552-05:00  INFO 43571 --- [FinalPractice ] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2024-07-12T20:54:35.552-05:00  INFO 43571 --- [FinalPractice ] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2024-07-12T20:54:35.552-05:00  INFO 43571 --- [FinalPractice ] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2024-07-12T20:54:35.552-05:00  INFO 43571 --- [FinalPractice ] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2024-07-12T20:54:35.562-05:00  INFO 43571 --- [FinalPractice ] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-gid2-2 unregistered
+2024-07-12T20:54:35.562-05:00  INFO 43571 --- [FinalPractice ] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-gid-1 unregistered
+2024-07-12T20:54:35.563-05:00  INFO 43571 --- [FinalPractice ] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : gid: Consumer stopped
+2024-07-12T20:54:35.563-05:00  INFO 43571 --- [FinalPractice ] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : gid2: Consumer stopped
+2024-07-12T20:54:35.581-05:00  INFO 43571 --- [FinalPractice ] [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2024-07-12T20:54:35.582-05:00  INFO 43571 --- [FinalPractice ] [SpringApplicationShutdownHook] o.s.i.channel.PublishSubscribeChannel    : Channel 'FinalPractice .errorChannel' has 0 subscriber(s).
+2024-07-12T20:54:35.582-05:00  INFO 43571 --- [FinalPractice ] [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean '_org.springframework.integration.errorLogger'
+2024-07-12T20:55:00.122-05:00 TRACE 43629 --- [FinalPractice ] [http-nio-8081-exec-1] FinalPractice.services.LogsService       : A TRACE Message
+2024-07-12T20:55:00.124-05:00 DEBUG 43629 --- [FinalPractice ] [http-nio-8081-exec-1] FinalPractice.services.LogsService       : A DEBUG Message
+2024-07-12T20:55:00.125-05:00  INFO 43629 --- [FinalPractice ] [http-nio-8081-exec-1] FinalPractice.services.LogsService       : An INFO Message
+2024-07-12T20:55:00.125-05:00  WARN 43629 --- [FinalPractice ] [http-nio-8081-exec-1] FinalPractice.services.LogsService       : A WARN Message
+2024-07-12T20:55:00.125-05:00 ERROR 43629 --- [FinalPractice ] [http-nio-8081-exec-1] FinalPractice.services.LogsService       : An ERROR Message
+2024-07-12T20:55:08.059-05:00 TRACE 43629 --- [FinalPractice ] [http-nio-8081-exec-2] FinalPractice.services.LogsService       : A TRACE Message
+2024-07-12T20:55:08.059-05:00 DEBUG 43629 --- [FinalPractice ] [http-nio-8081-exec-2] FinalPractice.services.LogsService       : A DEBUG Message
+2024-07-12T20:55:08.060-05:00  INFO 43629 --- [FinalPractice ] [http-nio-8081-exec-2] FinalPractice.services.LogsService       : An INFO Message
+2024-07-12T20:55:08.060-05:00  WARN 43629 --- [FinalPractice ] [http-nio-8081-exec-2] FinalPractice.services.LogsService       : A WARN Message
+2024-07-12T20:55:08.061-05:00 ERROR 43629 --- [FinalPractice ] [http-nio-8081-exec-2] FinalPractice.services.LogsService       : An ERROR Message

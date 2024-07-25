@@ -1,0 +1,6 @@
+2024-07-15T06:11:23.019-05:00 ERROR 73955 --- [FinalPractice ] [http-nio-8081-exec-1] FinalPractice.services.FireLogs          : addERROR
+2024-07-15T06:14:07.875-05:00 TRACE 74105 --- [FinalPractice ] [http-nio-8081-exec-2] FinalPractice.services.FireLogs          : addTRACE
+2024-07-15T06:14:07.881-05:00 DEBUG 74105 --- [FinalPractice ] [http-nio-8081-exec-2] FinalPractice.services.FireLogs          : addDEBUG
+2024-07-15T06:14:07.883-05:00  INFO 74105 --- [FinalPractice ] [http-nio-8081-exec-2] FinalPractice.services.FireLogs          : addINFO
+2024-07-15T06:14:07.885-05:00  WARN 74105 --- [FinalPractice ] [http-nio-8081-exec-2] FinalPractice.services.FireLogs          : addWARN
+2024-07-15T06:14:07.885-05:00 ERROR 74105 --- [FinalPractice ] [http-nio-8081-exec-2] FinalPractice.services.FireLogs          : addERROR

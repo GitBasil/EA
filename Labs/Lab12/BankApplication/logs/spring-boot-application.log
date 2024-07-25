@@ -1,0 +1,1638 @@
+2024-07-09T20:00:42.060-05:00 ERROR 9438 --- [reactor-http-nio-2] bank.logging.Logger                      : createAccount with parameters accountNumber= 1263862 , customerName= Frank Brown
+2024-07-09T20:00:42.140-05:00 ERROR 9438 --- [reactor-http-nio-2] bank.logging.Logger                      : createAccount with parameters accountNumber= 4253892 , customerName= John Doe
+2024-07-09T20:00:42.178-05:00 ERROR 9438 --- [reactor-http-nio-2] bank.logging.Logger                      : deposit with parameters accountNumber= 1263862 , amount= 240.0
+2024-07-09T20:00:42.237-05:00 ERROR 9438 --- [reactor-http-nio-2] bank.logging.Logger                      : deposit with parameters accountNumber= 1263862 , amount= 529.0
+2024-07-09T20:00:42.265-05:00 ERROR 9438 --- [reactor-http-nio-2] bank.logging.Logger                      : withdrawEuros with parameters accountNumber= 1263862 , amount= 230.0
+2024-07-09T20:00:42.287-05:00 ERROR 9438 --- [reactor-http-nio-2] bank.logging.Logger                      : deposit with parameters accountNumber= 4253892 , amount= 12450.0
+2024-07-09T20:00:42.575-05:00 ERROR 9438 --- [reactor-http-nio-2] bank.logging.Logger                      : depositEuros with parameters accountNumber= 4253892 , amount= 200.0
+2024-07-09T20:00:42.636-05:00 ERROR 9438 --- [reactor-http-nio-2] bank.logging.Logger                      : transferFunds with parameters fromAccountNumber= 4253892 , toAccountNumber= 1263862 , amount= 100.0 , description= payment of invoice 10232
+2024-07-09T20:01:19.882-05:00  INFO 9475 --- [main] bank.Application                         : Starting Application using Java 17.0.11 with PID 9475 (/Users/baselabubaker/Desktop/MIU/EA/Labs/Lab12/Lab12PartA/BankApplication/target/classes started by baselabubaker in /Users/baselabubaker/Desktop/MIU/EA/Labs/Lab12/Lab12PartA/BankApplication)
+2024-07-09T20:01:19.886-05:00  INFO 9475 --- [main] bank.Application                         : No active profile set, falling back to 1 default profile: "default"
+2024-07-09T20:01:20.802-05:00  INFO 9475 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2024-07-09T20:01:20.990-05:00  INFO 9475 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 181 ms. Found 3 MongoDB repository interfaces.
+2024-07-09T20:01:21.912-05:00  INFO 9475 --- [main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync|spring-boot", "version": "5.0.1"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "x86_64", "version": "13.6.7"}, "platform": "Java/Eclipse Adoptium/17.0.11+9"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@61cda923, com.mongodb.Jep395RecordCodecProvider@46fc522d, com.mongodb.KotlinCodecProvider@4262fdeb]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null}
+2024-07-09T20:01:21.973-05:00  INFO 9475 --- [cluster-ClusterId{value='668ddd61cb41032399d68add', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=21, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=29722706}
+2024-07-09T20:01:23.436-05:00  INFO 9475 --- [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8081 (http)
+2024-07-09T20:01:23.502-05:00  INFO 9475 --- [main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-gid-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = gid
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2024-07-09T20:01:23.596-05:00  INFO 9475 --- [main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2024-07-09T20:01:24.083-05:00  INFO 9475 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.7.0
+2024-07-09T20:01:24.085-05:00  INFO 9475 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 2ae524ed625438c5
+2024-07-09T20:01:24.086-05:00  INFO 9475 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1720573284081
+2024-07-09T20:01:24.094-05:00  INFO 9475 --- [main] o.a.k.c.c.internals.LegacyKafkaConsumer  : [Consumer clientId=consumer-gid-1, groupId=gid] Subscribed to topic(s): BankApplication
+2024-07-09T20:01:24.139-05:00  INFO 9475 --- [main] bank.Application                         : Started Application in 4.896 seconds (process running for 5.383)
+2024-07-09T20:01:24.871-05:00  INFO 9475 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-gid-1, groupId=gid] Cluster ID: G1sxKltzR5SKZazj_CFmnQ
+2024-07-09T20:01:24.872-05:00  INFO 9475 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Discovered group coordinator basels-mbp-2.lan:9092 (id: 2147483647 rack: null)
+2024-07-09T20:01:24.881-05:00  INFO 9475 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] (Re-)joining group
+2024-07-09T20:01:24.904-05:00  INFO 9475 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Request joining group due to: need to re-join with the given member-id: consumer-gid-1-a00f05d9-11a7-47cd-9d55-56708f4089c1
+2024-07-09T20:01:24.905-05:00  INFO 9475 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] (Re-)joining group
+2024-07-09T20:01:24.911-05:00  INFO 9475 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Successfully joined group with generation Generation{generationId=86, memberId='consumer-gid-1-a00f05d9-11a7-47cd-9d55-56708f4089c1', protocol='range'}
+2024-07-09T20:01:24.930-05:00  INFO 9475 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Finished assignment for group at generation 86: {consumer-gid-1-a00f05d9-11a7-47cd-9d55-56708f4089c1=Assignment(partitions=[BankApplication-0])}
+2024-07-09T20:01:24.957-05:00  INFO 9475 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Successfully synced group in generation Generation{generationId=86, memberId='consumer-gid-1-a00f05d9-11a7-47cd-9d55-56708f4089c1', protocol='range'}
+2024-07-09T20:01:24.958-05:00  INFO 9475 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Notifying assignor about the new Assignment(partitions=[BankApplication-0])
+2024-07-09T20:01:24.966-05:00  INFO 9475 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-gid-1, groupId=gid] Adding newly assigned partitions: BankApplication-0
+2024-07-09T20:01:24.985-05:00  INFO 9475 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerUtils        : Setting offset for partition BankApplication-0 to the committed offset FetchPosition{offset=4, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[basels-mbp-2.lan:9092 (id: 0 rack: null)], epoch=0}}
+2024-07-09T20:01:24.991-05:00  INFO 9475 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : gid: partitions assigned: [BankApplication-0]
+2024-07-09T20:01:25.192-05:00  INFO 9475 --- [reactor-http-nio-2] bank.logging.Logger                      : createAccount with parameters accountNumber= 1263862 , customerName= Frank Brown
+2024-07-09T20:01:25.273-05:00  INFO 9475 --- [reactor-http-nio-2] bank.logging.Logger                      : createAccount with parameters accountNumber= 4253892 , customerName= John Doe
+2024-07-09T20:01:25.302-05:00  INFO 9475 --- [reactor-http-nio-2] bank.logging.Logger                      : deposit with parameters accountNumber= 1263862 , amount= 240.0
+2024-07-09T20:01:25.353-05:00  INFO 9475 --- [reactor-http-nio-2] bank.logging.Logger                      : deposit with parameters accountNumber= 1263862 , amount= 529.0
+2024-07-09T20:01:25.376-05:00  INFO 9475 --- [reactor-http-nio-2] bank.logging.Logger                      : withdrawEuros with parameters accountNumber= 1263862 , amount= 230.0
+2024-07-09T20:01:25.404-05:00  INFO 9475 --- [reactor-http-nio-2] bank.logging.Logger                      : deposit with parameters accountNumber= 4253892 , amount= 12450.0
+2024-07-09T20:01:25.675-05:00  INFO 9475 --- [reactor-http-nio-2] bank.logging.Logger                      : depositEuros with parameters accountNumber= 4253892 , amount= 200.0
+2024-07-09T20:01:25.718-05:00  INFO 9475 --- [reactor-http-nio-2] bank.logging.Logger                      : transferFunds with parameters fromAccountNumber= 4253892 , toAccountNumber= 1263862 , amount= 100.0 , description= payment of invoice 10232
+2024-07-09T20:03:00.198-05:00  INFO 9475 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-gid-1, groupId=gid] Revoke previously assigned partitions BankApplication-0
+2024-07-09T20:03:00.199-05:00  INFO 9475 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : gid: partitions revoked: [BankApplication-0]
+2024-07-09T20:03:00.200-05:00  INFO 9475 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Member consumer-gid-1-a00f05d9-11a7-47cd-9d55-56708f4089c1 sending LeaveGroup request to coordinator basels-mbp-2.lan:9092 (id: 2147483647 rack: null) due to the consumer unsubscribed from all topics
+2024-07-09T20:03:00.201-05:00  INFO 9475 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-07-09T20:03:00.201-05:00  INFO 9475 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Request joining group due to: consumer pro-actively leaving the group
+2024-07-09T20:03:00.201-05:00  INFO 9475 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.LegacyKafkaConsumer  : [Consumer clientId=consumer-gid-1, groupId=gid] Unsubscribed all topics or patterns and assigned partitions
+2024-07-09T20:03:00.203-05:00  INFO 9475 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-07-09T20:03:00.203-05:00  INFO 9475 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Request joining group due to: consumer pro-actively leaving the group
+2024-07-09T20:03:00.425-05:00  INFO 9475 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2024-07-09T20:03:00.426-05:00  INFO 9475 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-07-09T20:03:00.427-05:00  INFO 9475 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2024-07-09T20:03:00.427-05:00  INFO 9475 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2024-07-09T20:03:00.438-05:00  INFO 9475 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-gid-1 unregistered
+2024-07-09T20:03:00.439-05:00  INFO 9475 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : gid: Consumer stopped
+2024-07-09T20:03:03.761-05:00  INFO 9564 --- [main] bank.Application                         : Starting Application using Java 17.0.11 with PID 9564 (/Users/baselabubaker/Desktop/MIU/EA/Labs/Lab12/Lab12PartA/BankApplication/target/classes started by baselabubaker in /Users/baselabubaker/Desktop/MIU/EA/Labs/Lab12/Lab12PartA/BankApplication)
+2024-07-09T20:03:03.766-05:00  INFO 9564 --- [main] bank.Application                         : No active profile set, falling back to 1 default profile: "default"
+2024-07-09T20:03:04.956-05:00  INFO 9564 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2024-07-09T20:03:05.125-05:00  INFO 9564 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 162 ms. Found 3 MongoDB repository interfaces.
+2024-07-09T20:03:06.221-05:00  INFO 9564 --- [main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync|spring-boot", "version": "5.0.1"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "x86_64", "version": "13.6.7"}, "platform": "Java/Eclipse Adoptium/17.0.11+9"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=null, commandListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsCommandListener@4dd2ef54], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@13aed42b, com.mongodb.Jep395RecordCodecProvider@698d6d30, com.mongodb.KotlinCodecProvider@78065fcd]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsConnectionPoolListener@cf01c2e], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null}
+2024-07-09T20:03:06.294-05:00  INFO 9564 --- [cluster-ClusterId{value='668dddcae4ed264a4939756b', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=21, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=44091543}
+2024-07-09T20:03:07.161-05:00  INFO 9564 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-07-09T20:03:07.812-05:00  INFO 9564 --- [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8081 (http)
+2024-07-09T20:03:07.862-05:00  INFO 9564 --- [main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-gid-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = gid
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2024-07-09T20:03:07.920-05:00  INFO 9564 --- [main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2024-07-09T20:03:08.081-05:00  INFO 9564 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.7.0
+2024-07-09T20:03:08.083-05:00  INFO 9564 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 2ae524ed625438c5
+2024-07-09T20:03:08.083-05:00  INFO 9564 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1720573388079
+2024-07-09T20:03:08.104-05:00  INFO 9564 --- [main] o.a.k.c.c.internals.LegacyKafkaConsumer  : [Consumer clientId=consumer-gid-1, groupId=gid] Subscribed to topic(s): BankApplication
+2024-07-09T20:03:08.146-05:00  INFO 9564 --- [main] bank.Application                         : Started Application in 4.916 seconds (process running for 5.51)
+2024-07-09T20:03:08.594-05:00  INFO 9564 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-gid-1, groupId=gid] Cluster ID: G1sxKltzR5SKZazj_CFmnQ
+2024-07-09T20:03:08.595-05:00  INFO 9564 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Discovered group coordinator basels-mbp-2.lan:9092 (id: 2147483647 rack: null)
+2024-07-09T20:03:08.605-05:00  INFO 9564 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] (Re-)joining group
+2024-07-09T20:03:08.626-05:00  INFO 9564 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Request joining group due to: need to re-join with the given member-id: consumer-gid-1-aea22af4-d015-488d-b22c-09d2dab853cc
+2024-07-09T20:03:08.627-05:00  INFO 9564 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] (Re-)joining group
+2024-07-09T20:03:08.631-05:00  INFO 9564 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Successfully joined group with generation Generation{generationId=88, memberId='consumer-gid-1-aea22af4-d015-488d-b22c-09d2dab853cc', protocol='range'}
+2024-07-09T20:03:08.640-05:00  INFO 9564 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Finished assignment for group at generation 88: {consumer-gid-1-aea22af4-d015-488d-b22c-09d2dab853cc=Assignment(partitions=[BankApplication-0])}
+2024-07-09T20:03:08.648-05:00  INFO 9564 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Successfully synced group in generation Generation{generationId=88, memberId='consumer-gid-1-aea22af4-d015-488d-b22c-09d2dab853cc', protocol='range'}
+2024-07-09T20:03:08.650-05:00  INFO 9564 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Notifying assignor about the new Assignment(partitions=[BankApplication-0])
+2024-07-09T20:03:08.653-05:00  INFO 9564 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-gid-1, groupId=gid] Adding newly assigned partitions: BankApplication-0
+2024-07-09T20:03:08.669-05:00  INFO 9564 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerUtils        : Setting offset for partition BankApplication-0 to the committed offset FetchPosition{offset=4, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[basels-mbp-2.lan:9092 (id: 0 rack: null)], epoch=0}}
+2024-07-09T20:03:08.672-05:00  INFO 9564 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : gid: partitions assigned: [BankApplication-0]
+2024-07-09T20:03:08.832-05:00  INFO 9564 --- [reactor-http-nio-2] bank.logging.Logger                      : createAccount with parameters accountNumber= 1263862 , customerName= Frank Brown
+2024-07-09T20:03:08.899-05:00  INFO 9564 --- [reactor-http-nio-2] bank.logging.Logger                      : createAccount with parameters accountNumber= 4253892 , customerName= John Doe
+2024-07-09T20:03:08.930-05:00  INFO 9564 --- [reactor-http-nio-2] bank.logging.Logger                      : deposit with parameters accountNumber= 1263862 , amount= 240.0
+2024-07-09T20:03:08.978-05:00  INFO 9564 --- [reactor-http-nio-2] bank.logging.Logger                      : deposit with parameters accountNumber= 1263862 , amount= 529.0
+2024-07-09T20:03:09.001-05:00  INFO 9564 --- [reactor-http-nio-2] bank.logging.Logger                      : withdrawEuros with parameters accountNumber= 1263862 , amount= 230.0
+2024-07-09T20:03:09.021-05:00  INFO 9564 --- [reactor-http-nio-2] bank.logging.Logger                      : deposit with parameters accountNumber= 4253892 , amount= 12450.0
+2024-07-09T20:03:09.281-05:00  INFO 9564 --- [reactor-http-nio-2] bank.logging.Logger                      : depositEuros with parameters accountNumber= 4253892 , amount= 200.0
+2024-07-09T20:03:09.318-05:00  INFO 9564 --- [reactor-http-nio-2] bank.logging.Logger                      : transferFunds with parameters fromAccountNumber= 4253892 , toAccountNumber= 1263862 , amount= 100.0 , description= payment of invoice 10232
+2024-07-09T20:03:24.527-05:00  INFO 9605 --- [main] bank.SpringBootRestApplication           : Starting SpringBootRestApplication using Java 17.0.11 with PID 9605 (/Users/baselabubaker/Desktop/MIU/EA/Labs/Lab12/Lab12PartA/BankApplication/target/classes started by baselabubaker in /Users/baselabubaker/Desktop/MIU/EA/Labs/Lab12/Lab12PartA/BankApplication)
+2024-07-09T20:03:24.531-05:00  INFO 9605 --- [main] bank.SpringBootRestApplication           : No active profile set, falling back to 1 default profile: "default"
+2024-07-09T20:03:25.639-05:00  INFO 9605 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2024-07-09T20:03:25.809-05:00  INFO 9605 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 164 ms. Found 3 MongoDB repository interfaces.
+2024-07-09T20:03:26.929-05:00  INFO 9605 --- [main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync|spring-boot", "version": "5.0.1"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "x86_64", "version": "13.6.7"}, "platform": "Java/Eclipse Adoptium/17.0.11+9"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=null, commandListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsCommandListener@77896335], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@597a7afa, com.mongodb.Jep395RecordCodecProvider@29dcdd1c, com.mongodb.KotlinCodecProvider@7cdb7fc]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsConnectionPoolListener@5ba1b62e], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null}
+2024-07-09T20:03:26.978-05:00  INFO 9605 --- [cluster-ClusterId{value='668ddddec9620a448763bec4', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=21, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=22937507}
+2024-07-09T20:03:27.920-05:00  INFO 9605 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-07-09T20:03:30.778-05:00  WARN 9605 --- [main] onfigReactiveWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2024-07-09T20:03:30.806-05:00  INFO 9605 --- [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-07-09T20:03:30.830-05:00 ERROR 9605 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8081 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8081 or configure this application to listen on another port.
+
+2024-07-09T20:03:37.215-05:00  INFO 9564 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-gid-1, groupId=gid] Revoke previously assigned partitions BankApplication-0
+2024-07-09T20:03:37.216-05:00  INFO 9564 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : gid: partitions revoked: [BankApplication-0]
+2024-07-09T20:03:37.217-05:00  INFO 9564 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Member consumer-gid-1-aea22af4-d015-488d-b22c-09d2dab853cc sending LeaveGroup request to coordinator basels-mbp-2.lan:9092 (id: 2147483647 rack: null) due to the consumer unsubscribed from all topics
+2024-07-09T20:03:37.219-05:00  INFO 9564 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-07-09T20:03:37.220-05:00  INFO 9564 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Request joining group due to: consumer pro-actively leaving the group
+2024-07-09T20:03:37.221-05:00  INFO 9564 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.LegacyKafkaConsumer  : [Consumer clientId=consumer-gid-1, groupId=gid] Unsubscribed all topics or patterns and assigned partitions
+2024-07-09T20:03:37.226-05:00  INFO 9564 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-07-09T20:03:37.227-05:00  INFO 9564 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Request joining group due to: consumer pro-actively leaving the group
+2024-07-09T20:03:37.337-05:00  INFO 9564 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2024-07-09T20:03:37.337-05:00  INFO 9564 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-07-09T20:03:37.337-05:00  INFO 9564 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2024-07-09T20:03:37.338-05:00  INFO 9564 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2024-07-09T20:03:37.350-05:00  INFO 9564 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-gid-1 unregistered
+2024-07-09T20:03:37.351-05:00  INFO 9564 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : gid: Consumer stopped
+2024-07-09T20:03:40.991-05:00  INFO 9630 --- [main] bank.Application                         : Starting Application using Java 17.0.11 with PID 9630 (/Users/baselabubaker/Desktop/MIU/EA/Labs/Lab12/Lab12PartA/BankApplication/target/classes started by baselabubaker in /Users/baselabubaker/Desktop/MIU/EA/Labs/Lab12/Lab12PartA/BankApplication)
+2024-07-09T20:03:40.996-05:00  INFO 9630 --- [main] bank.Application                         : No active profile set, falling back to 1 default profile: "default"
+2024-07-09T20:03:42.123-05:00  INFO 9630 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2024-07-09T20:03:42.289-05:00  INFO 9630 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 161 ms. Found 3 MongoDB repository interfaces.
+2024-07-09T20:03:43.452-05:00  INFO 9630 --- [main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync|spring-boot", "version": "5.0.1"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "x86_64", "version": "13.6.7"}, "platform": "Java/Eclipse Adoptium/17.0.11+9"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=null, commandListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsCommandListener@5b0902b4], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@22ae905f, com.mongodb.Jep395RecordCodecProvider@748904e8, com.mongodb.KotlinCodecProvider@4fbaa7f5]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsConnectionPoolListener@5c59a0f7], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null}
+2024-07-09T20:03:43.521-05:00  INFO 9630 --- [cluster-ClusterId{value='668dddef5c4a187c0c3bbdbc', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=21, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=37724843}
+2024-07-09T20:03:44.400-05:00  INFO 9630 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-07-09T20:03:45.062-05:00  INFO 9630 --- [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8081 (http)
+2024-07-09T20:03:45.111-05:00  INFO 9630 --- [main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-gid-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = gid
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2024-07-09T20:03:45.168-05:00  INFO 9630 --- [main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2024-07-09T20:03:45.317-05:00  INFO 9630 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.7.0
+2024-07-09T20:03:45.319-05:00  INFO 9630 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 2ae524ed625438c5
+2024-07-09T20:03:45.319-05:00  INFO 9630 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1720573425316
+2024-07-09T20:03:45.340-05:00  INFO 9630 --- [main] o.a.k.c.c.internals.LegacyKafkaConsumer  : [Consumer clientId=consumer-gid-1, groupId=gid] Subscribed to topic(s): BankApplication
+2024-07-09T20:03:45.374-05:00  INFO 9630 --- [main] bank.Application                         : Started Application in 4.94 seconds (process running for 5.438)
+2024-07-09T20:03:45.814-05:00  INFO 9630 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-gid-1, groupId=gid] Cluster ID: G1sxKltzR5SKZazj_CFmnQ
+2024-07-09T20:03:45.815-05:00  INFO 9630 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Discovered group coordinator basels-mbp-2.lan:9092 (id: 2147483647 rack: null)
+2024-07-09T20:03:45.824-05:00  INFO 9630 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] (Re-)joining group
+2024-07-09T20:03:45.846-05:00  INFO 9630 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Request joining group due to: need to re-join with the given member-id: consumer-gid-1-2697fb82-a316-460c-80e2-c977b9849671
+2024-07-09T20:03:45.847-05:00  INFO 9630 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] (Re-)joining group
+2024-07-09T20:03:45.850-05:00  INFO 9630 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Successfully joined group with generation Generation{generationId=90, memberId='consumer-gid-1-2697fb82-a316-460c-80e2-c977b9849671', protocol='range'}
+2024-07-09T20:03:45.863-05:00  INFO 9630 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Finished assignment for group at generation 90: {consumer-gid-1-2697fb82-a316-460c-80e2-c977b9849671=Assignment(partitions=[BankApplication-0])}
+2024-07-09T20:03:45.870-05:00  INFO 9630 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Successfully synced group in generation Generation{generationId=90, memberId='consumer-gid-1-2697fb82-a316-460c-80e2-c977b9849671', protocol='range'}
+2024-07-09T20:03:45.871-05:00  INFO 9630 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Notifying assignor about the new Assignment(partitions=[BankApplication-0])
+2024-07-09T20:03:45.875-05:00  INFO 9630 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-gid-1, groupId=gid] Adding newly assigned partitions: BankApplication-0
+2024-07-09T20:03:45.888-05:00  INFO 9630 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerUtils        : Setting offset for partition BankApplication-0 to the committed offset FetchPosition{offset=4, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[basels-mbp-2.lan:9092 (id: 0 rack: null)], epoch=0}}
+2024-07-09T20:03:45.892-05:00  INFO 9630 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : gid: partitions assigned: [BankApplication-0]
+2024-07-09T20:03:46.038-05:00  INFO 9630 --- [reactor-http-nio-2] bank.logging.Logger                      : createAccount with parameters accountNumber= 1263862 , customerName= Frank Brown
+2024-07-09T20:03:46.102-05:00  INFO 9630 --- [reactor-http-nio-2] bank.logging.Logger                      : createAccount with parameters accountNumber= 4253892 , customerName= John Doe
+2024-07-09T20:03:46.132-05:00  INFO 9630 --- [reactor-http-nio-2] bank.logging.Logger                      : deposit with parameters accountNumber= 1263862 , amount= 240.0
+2024-07-09T20:03:46.178-05:00  INFO 9630 --- [reactor-http-nio-2] bank.logging.Logger                      : deposit with parameters accountNumber= 1263862 , amount= 529.0
+2024-07-09T20:03:46.199-05:00  INFO 9630 --- [reactor-http-nio-2] bank.logging.Logger                      : withdrawEuros with parameters accountNumber= 1263862 , amount= 230.0
+2024-07-09T20:03:46.219-05:00  INFO 9630 --- [reactor-http-nio-2] bank.logging.Logger                      : deposit with parameters accountNumber= 4253892 , amount= 12450.0
+2024-07-09T20:03:46.557-05:00  INFO 9630 --- [reactor-http-nio-2] bank.logging.Logger                      : depositEuros with parameters accountNumber= 4253892 , amount= 200.0
+2024-07-09T20:03:46.594-05:00  INFO 9630 --- [reactor-http-nio-2] bank.logging.Logger                      : transferFunds with parameters fromAccountNumber= 4253892 , toAccountNumber= 1263862 , amount= 100.0 , description= payment of invoice 10232
+2024-07-09T20:06:11.150-05:00  INFO 9630 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-gid-1, groupId=gid] Revoke previously assigned partitions BankApplication-0
+2024-07-09T20:06:11.151-05:00  INFO 9630 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : gid: partitions revoked: [BankApplication-0]
+2024-07-09T20:06:11.152-05:00  INFO 9630 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Member consumer-gid-1-2697fb82-a316-460c-80e2-c977b9849671 sending LeaveGroup request to coordinator basels-mbp-2.lan:9092 (id: 2147483647 rack: null) due to the consumer unsubscribed from all topics
+2024-07-09T20:06:11.153-05:00  INFO 9630 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-07-09T20:06:11.153-05:00  INFO 9630 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Request joining group due to: consumer pro-actively leaving the group
+2024-07-09T20:06:11.153-05:00  INFO 9630 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.LegacyKafkaConsumer  : [Consumer clientId=consumer-gid-1, groupId=gid] Unsubscribed all topics or patterns and assigned partitions
+2024-07-09T20:06:11.155-05:00  INFO 9630 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-07-09T20:06:11.157-05:00  INFO 9630 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Request joining group due to: consumer pro-actively leaving the group
+2024-07-09T20:06:11.592-05:00  INFO 9630 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2024-07-09T20:06:11.592-05:00  INFO 9630 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-07-09T20:06:11.592-05:00  INFO 9630 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2024-07-09T20:06:11.593-05:00  INFO 9630 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2024-07-09T20:06:11.602-05:00  INFO 9630 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-gid-1 unregistered
+2024-07-09T20:06:11.603-05:00  INFO 9630 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : gid: Consumer stopped
+2024-07-09T20:06:21.627-05:00  INFO 9758 --- [main] bank.Application                         : Starting Application using Java 17.0.11 with PID 9758 (/Users/baselabubaker/Desktop/MIU/EA/Labs/Lab12/Lab12PartA/BankApplication/target/classes started by baselabubaker in /Users/baselabubaker/Desktop/MIU/EA/Labs/Lab12/Lab12PartA/BankApplication)
+2024-07-09T20:06:21.631-05:00  INFO 9758 --- [main] bank.Application                         : No active profile set, falling back to 1 default profile: "default"
+2024-07-09T20:06:22.846-05:00  INFO 9758 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2024-07-09T20:06:23.022-05:00  INFO 9758 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 171 ms. Found 3 MongoDB repository interfaces.
+2024-07-09T20:06:24.238-05:00  INFO 9758 --- [main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync|spring-boot", "version": "5.0.1"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "x86_64", "version": "13.6.7"}, "platform": "Java/Eclipse Adoptium/17.0.11+9"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=null, commandListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsCommandListener@65593327], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@629b780f, com.mongodb.Jep395RecordCodecProvider@3af36922, com.mongodb.KotlinCodecProvider@609b041c]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsConnectionPoolListener@4d81e83a], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null}
+2024-07-09T20:06:24.318-05:00  INFO 9758 --- [cluster-ClusterId{value='668dde90069520741ceb2ce1', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=21, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=32659669}
+2024-07-09T20:06:25.273-05:00  INFO 9758 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 4 endpoints beneath base path '/actuator'
+2024-07-09T20:06:26.025-05:00  INFO 9758 --- [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8081 (http)
+2024-07-09T20:06:26.091-05:00  INFO 9758 --- [main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-gid-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = gid
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2024-07-09T20:06:26.158-05:00  INFO 9758 --- [main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2024-07-09T20:06:26.315-05:00  INFO 9758 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.7.0
+2024-07-09T20:06:26.317-05:00  INFO 9758 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 2ae524ed625438c5
+2024-07-09T20:06:26.317-05:00  INFO 9758 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1720573586314
+2024-07-09T20:06:26.340-05:00  INFO 9758 --- [main] o.a.k.c.c.internals.LegacyKafkaConsumer  : [Consumer clientId=consumer-gid-1, groupId=gid] Subscribed to topic(s): BankApplication
+2024-07-09T20:06:26.379-05:00  INFO 9758 --- [main] bank.Application                         : Started Application in 5.34 seconds (process running for 5.91)
+2024-07-09T20:06:26.862-05:00  INFO 9758 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-gid-1, groupId=gid] Cluster ID: G1sxKltzR5SKZazj_CFmnQ
+2024-07-09T20:06:26.863-05:00  INFO 9758 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Discovered group coordinator basels-mbp-2.lan:9092 (id: 2147483647 rack: null)
+2024-07-09T20:06:26.872-05:00  INFO 9758 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] (Re-)joining group
+2024-07-09T20:06:26.898-05:00  INFO 9758 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Request joining group due to: need to re-join with the given member-id: consumer-gid-1-623a78e5-f796-46b3-b640-d71c71ddce15
+2024-07-09T20:06:26.898-05:00  INFO 9758 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] (Re-)joining group
+2024-07-09T20:06:26.901-05:00  INFO 9758 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Successfully joined group with generation Generation{generationId=92, memberId='consumer-gid-1-623a78e5-f796-46b3-b640-d71c71ddce15', protocol='range'}
+2024-07-09T20:06:26.918-05:00  INFO 9758 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Finished assignment for group at generation 92: {consumer-gid-1-623a78e5-f796-46b3-b640-d71c71ddce15=Assignment(partitions=[BankApplication-0])}
+2024-07-09T20:06:26.931-05:00  INFO 9758 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Successfully synced group in generation Generation{generationId=92, memberId='consumer-gid-1-623a78e5-f796-46b3-b640-d71c71ddce15', protocol='range'}
+2024-07-09T20:06:26.932-05:00  INFO 9758 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Notifying assignor about the new Assignment(partitions=[BankApplication-0])
+2024-07-09T20:06:26.936-05:00  INFO 9758 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-gid-1, groupId=gid] Adding newly assigned partitions: BankApplication-0
+2024-07-09T20:06:26.951-05:00  INFO 9758 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerUtils        : Setting offset for partition BankApplication-0 to the committed offset FetchPosition{offset=4, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[basels-mbp-2.lan:9092 (id: 0 rack: null)], epoch=0}}
+2024-07-09T20:06:26.953-05:00  INFO 9758 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : gid: partitions assigned: [BankApplication-0]
+2024-07-09T20:06:27.114-05:00  INFO 9758 --- [reactor-http-nio-2] bank.logging.Logger                      : createAccount with parameters accountNumber= 1263862 , customerName= Frank Brown
+2024-07-09T20:06:27.186-05:00  INFO 9758 --- [reactor-http-nio-2] bank.logging.Logger                      : createAccount with parameters accountNumber= 4253892 , customerName= John Doe
+2024-07-09T20:06:27.220-05:00  INFO 9758 --- [reactor-http-nio-2] bank.logging.Logger                      : deposit with parameters accountNumber= 1263862 , amount= 240.0
+2024-07-09T20:06:27.381-05:00  INFO 9758 --- [reactor-http-nio-2] bank.logging.Logger                      : deposit with parameters accountNumber= 1263862 , amount= 529.0
+2024-07-09T20:06:27.406-05:00  INFO 9758 --- [reactor-http-nio-2] bank.logging.Logger                      : withdrawEuros with parameters accountNumber= 1263862 , amount= 230.0
+2024-07-09T20:06:27.437-05:00  INFO 9758 --- [reactor-http-nio-2] bank.logging.Logger                      : deposit with parameters accountNumber= 4253892 , amount= 12450.0
+2024-07-09T20:06:27.771-05:00  INFO 9758 --- [reactor-http-nio-2] bank.logging.Logger                      : depositEuros with parameters accountNumber= 4253892 , amount= 200.0
+2024-07-09T20:06:27.820-05:00  INFO 9758 --- [reactor-http-nio-2] bank.logging.Logger                      : transferFunds with parameters fromAccountNumber= 4253892 , toAccountNumber= 1263862 , amount= 100.0 , description= payment of invoice 10232
+2024-07-09T20:07:06.231-05:00  INFO 9758 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-gid-1, groupId=gid] Revoke previously assigned partitions BankApplication-0
+2024-07-09T20:07:06.234-05:00  INFO 9758 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : gid: partitions revoked: [BankApplication-0]
+2024-07-09T20:07:06.235-05:00  INFO 9758 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Member consumer-gid-1-623a78e5-f796-46b3-b640-d71c71ddce15 sending LeaveGroup request to coordinator basels-mbp-2.lan:9092 (id: 2147483647 rack: null) due to the consumer unsubscribed from all topics
+2024-07-09T20:07:06.236-05:00  INFO 9758 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-07-09T20:07:06.237-05:00  INFO 9758 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Request joining group due to: consumer pro-actively leaving the group
+2024-07-09T20:07:06.237-05:00  INFO 9758 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.LegacyKafkaConsumer  : [Consumer clientId=consumer-gid-1, groupId=gid] Unsubscribed all topics or patterns and assigned partitions
+2024-07-09T20:07:06.239-05:00  INFO 9758 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-07-09T20:07:06.240-05:00  INFO 9758 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Request joining group due to: consumer pro-actively leaving the group
+2024-07-09T20:07:06.288-05:00  INFO 9758 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2024-07-09T20:07:06.289-05:00  INFO 9758 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-07-09T20:07:06.289-05:00  INFO 9758 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2024-07-09T20:07:06.290-05:00  INFO 9758 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2024-07-09T20:07:06.301-05:00  INFO 9758 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-gid-1 unregistered
+2024-07-09T20:07:06.302-05:00  INFO 9758 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : gid: Consumer stopped
+2024-07-09T20:07:12.565-05:00  INFO 9797 --- [main] bank.Application                         : Starting Application using Java 17.0.11 with PID 9797 (/Users/baselabubaker/Desktop/MIU/EA/Labs/Lab12/Lab12PartA/BankApplication/target/classes started by baselabubaker in /Users/baselabubaker/Desktop/MIU/EA/Labs/Lab12/Lab12PartA/BankApplication)
+2024-07-09T20:07:12.569-05:00  INFO 9797 --- [main] bank.Application                         : No active profile set, falling back to 1 default profile: "default"
+2024-07-09T20:07:13.842-05:00  INFO 9797 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2024-07-09T20:07:14.018-05:00  INFO 9797 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 170 ms. Found 3 MongoDB repository interfaces.
+2024-07-09T20:07:15.311-05:00  INFO 9797 --- [main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync|spring-boot", "version": "5.0.1"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "x86_64", "version": "13.6.7"}, "platform": "Java/Eclipse Adoptium/17.0.11+9"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=null, commandListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsCommandListener@74697863], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@4438938e, com.mongodb.Jep395RecordCodecProvider@4e50ae56, com.mongodb.KotlinCodecProvider@1c68d0db]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsConnectionPoolListener@615439f7], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null}
+2024-07-09T20:07:15.375-05:00  INFO 9797 --- [cluster-ClusterId{value='668ddec310c1a20c29e47b1f', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=21, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=26033244}
+2024-07-09T20:07:16.338-05:00  INFO 9797 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 4 endpoints beneath base path '/actuator'
+2024-07-09T20:07:17.094-05:00  INFO 9797 --- [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8081 (http)
+2024-07-09T20:07:17.156-05:00  INFO 9797 --- [main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-gid-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = gid
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2024-07-09T20:07:17.214-05:00  INFO 9797 --- [main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2024-07-09T20:07:17.384-05:00  INFO 9797 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.7.0
+2024-07-09T20:07:17.386-05:00  INFO 9797 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 2ae524ed625438c5
+2024-07-09T20:07:17.386-05:00  INFO 9797 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1720573637383
+2024-07-09T20:07:17.408-05:00  INFO 9797 --- [main] o.a.k.c.c.internals.LegacyKafkaConsumer  : [Consumer clientId=consumer-gid-1, groupId=gid] Subscribed to topic(s): BankApplication
+2024-07-09T20:07:17.448-05:00  INFO 9797 --- [main] bank.Application                         : Started Application in 5.488 seconds (process running for 6.047)
+2024-07-09T20:07:17.907-05:00  INFO 9797 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-gid-1, groupId=gid] Cluster ID: G1sxKltzR5SKZazj_CFmnQ
+2024-07-09T20:07:17.909-05:00  INFO 9797 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Discovered group coordinator basels-mbp-2.lan:9092 (id: 2147483647 rack: null)
+2024-07-09T20:07:17.918-05:00  INFO 9797 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] (Re-)joining group
+2024-07-09T20:07:17.942-05:00  INFO 9797 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Request joining group due to: need to re-join with the given member-id: consumer-gid-1-77cb4d8c-3b1e-43e0-be76-53913fbdf96e
+2024-07-09T20:07:17.943-05:00  INFO 9797 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] (Re-)joining group
+2024-07-09T20:07:17.949-05:00  INFO 9797 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Successfully joined group with generation Generation{generationId=94, memberId='consumer-gid-1-77cb4d8c-3b1e-43e0-be76-53913fbdf96e', protocol='range'}
+2024-07-09T20:07:17.964-05:00  INFO 9797 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Finished assignment for group at generation 94: {consumer-gid-1-77cb4d8c-3b1e-43e0-be76-53913fbdf96e=Assignment(partitions=[BankApplication-0])}
+2024-07-09T20:07:17.976-05:00  INFO 9797 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Successfully synced group in generation Generation{generationId=94, memberId='consumer-gid-1-77cb4d8c-3b1e-43e0-be76-53913fbdf96e', protocol='range'}
+2024-07-09T20:07:17.978-05:00  INFO 9797 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Notifying assignor about the new Assignment(partitions=[BankApplication-0])
+2024-07-09T20:07:17.982-05:00  INFO 9797 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-gid-1, groupId=gid] Adding newly assigned partitions: BankApplication-0
+2024-07-09T20:07:18.000-05:00  INFO 9797 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerUtils        : Setting offset for partition BankApplication-0 to the committed offset FetchPosition{offset=4, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[basels-mbp-2.lan:9092 (id: 0 rack: null)], epoch=0}}
+2024-07-09T20:07:18.006-05:00  INFO 9797 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : gid: partitions assigned: [BankApplication-0]
+2024-07-09T20:07:18.203-05:00  INFO 9797 --- [reactor-http-nio-2] bank.logging.Logger                      : createAccount with parameters accountNumber= 1263862 , customerName= Frank Brown
+2024-07-09T20:07:18.302-05:00  INFO 9797 --- [reactor-http-nio-2] bank.logging.Logger                      : createAccount with parameters accountNumber= 4253892 , customerName= John Doe
+2024-07-09T20:07:18.352-05:00  INFO 9797 --- [reactor-http-nio-2] bank.logging.Logger                      : deposit with parameters accountNumber= 1263862 , amount= 240.0
+2024-07-09T20:07:18.414-05:00  INFO 9797 --- [reactor-http-nio-2] bank.logging.Logger                      : deposit with parameters accountNumber= 1263862 , amount= 529.0
+2024-07-09T20:07:18.444-05:00  INFO 9797 --- [reactor-http-nio-2] bank.logging.Logger                      : withdrawEuros with parameters accountNumber= 1263862 , amount= 230.0
+2024-07-09T20:07:18.478-05:00  INFO 9797 --- [reactor-http-nio-2] bank.logging.Logger                      : deposit with parameters accountNumber= 4253892 , amount= 12450.0
+2024-07-09T20:07:18.823-05:00  INFO 9797 --- [reactor-http-nio-2] bank.logging.Logger                      : depositEuros with parameters accountNumber= 4253892 , amount= 200.0
+2024-07-09T20:07:18.873-05:00  INFO 9797 --- [reactor-http-nio-2] bank.logging.Logger                      : transferFunds with parameters fromAccountNumber= 4253892 , toAccountNumber= 1263862 , amount= 100.0 , description= payment of invoice 10232
+2024-07-09T20:07:47.543-05:00  INFO 9797 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-gid-1, groupId=gid] Revoke previously assigned partitions BankApplication-0
+2024-07-09T20:07:47.544-05:00  INFO 9797 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : gid: partitions revoked: [BankApplication-0]
+2024-07-09T20:07:47.545-05:00  INFO 9797 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Member consumer-gid-1-77cb4d8c-3b1e-43e0-be76-53913fbdf96e sending LeaveGroup request to coordinator basels-mbp-2.lan:9092 (id: 2147483647 rack: null) due to the consumer unsubscribed from all topics
+2024-07-09T20:07:47.547-05:00  INFO 9797 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-07-09T20:07:47.547-05:00  INFO 9797 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Request joining group due to: consumer pro-actively leaving the group
+2024-07-09T20:07:47.547-05:00  INFO 9797 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.LegacyKafkaConsumer  : [Consumer clientId=consumer-gid-1, groupId=gid] Unsubscribed all topics or patterns and assigned partitions
+2024-07-09T20:07:47.552-05:00  INFO 9797 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-07-09T20:07:47.552-05:00  INFO 9797 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Request joining group due to: consumer pro-actively leaving the group
+2024-07-09T20:07:47.741-05:00  INFO 9797 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2024-07-09T20:07:47.742-05:00  INFO 9797 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-07-09T20:07:47.742-05:00  INFO 9797 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2024-07-09T20:07:47.742-05:00  INFO 9797 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2024-07-09T20:07:47.753-05:00  INFO 9797 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-gid-1 unregistered
+2024-07-09T20:07:47.754-05:00  INFO 9797 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : gid: Consumer stopped
+2024-07-09T20:07:54.501-05:00  INFO 9839 --- [main] bank.Application                         : Starting Application using Java 17.0.11 with PID 9839 (/Users/baselabubaker/Desktop/MIU/EA/Labs/Lab12/Lab12PartA/BankApplication/target/classes started by baselabubaker in /Users/baselabubaker/Desktop/MIU/EA/Labs/Lab12/Lab12PartA/BankApplication)
+2024-07-09T20:07:54.506-05:00  INFO 9839 --- [main] bank.Application                         : No active profile set, falling back to 1 default profile: "default"
+2024-07-09T20:07:55.658-05:00  INFO 9839 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2024-07-09T20:07:55.827-05:00  INFO 9839 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 164 ms. Found 3 MongoDB repository interfaces.
+2024-07-09T20:07:56.972-05:00  INFO 9839 --- [main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync|spring-boot", "version": "5.0.1"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "x86_64", "version": "13.6.7"}, "platform": "Java/Eclipse Adoptium/17.0.11+9"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=null, commandListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsCommandListener@9d3d54e], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@28cb86b2, com.mongodb.Jep395RecordCodecProvider@22ae905f, com.mongodb.KotlinCodecProvider@748904e8]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsConnectionPoolListener@101330ad], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null}
+2024-07-09T20:07:57.031-05:00  INFO 9839 --- [cluster-ClusterId{value='668ddeec89b3d41807fa651a', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=21, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=25230654}
+2024-07-09T20:07:57.952-05:00  INFO 9839 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-07-09T20:07:58.666-05:00  INFO 9839 --- [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8081 (http)
+2024-07-09T20:07:58.723-05:00  INFO 9839 --- [main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-gid-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = gid
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2024-07-09T20:07:58.784-05:00  INFO 9839 --- [main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2024-07-09T20:07:58.932-05:00  INFO 9839 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.7.0
+2024-07-09T20:07:58.933-05:00  INFO 9839 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 2ae524ed625438c5
+2024-07-09T20:07:58.934-05:00  INFO 9839 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1720573678931
+2024-07-09T20:07:58.952-05:00  INFO 9839 --- [main] o.a.k.c.c.internals.LegacyKafkaConsumer  : [Consumer clientId=consumer-gid-1, groupId=gid] Subscribed to topic(s): BankApplication
+2024-07-09T20:07:58.994-05:00  INFO 9839 --- [main] bank.Application                         : Started Application in 5.054 seconds (process running for 5.77)
+2024-07-09T20:07:59.426-05:00  INFO 9839 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-gid-1, groupId=gid] Cluster ID: G1sxKltzR5SKZazj_CFmnQ
+2024-07-09T20:07:59.427-05:00  INFO 9839 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Discovered group coordinator basels-mbp-2.lan:9092 (id: 2147483647 rack: null)
+2024-07-09T20:07:59.439-05:00  INFO 9839 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] (Re-)joining group
+2024-07-09T20:07:59.463-05:00  INFO 9839 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Request joining group due to: need to re-join with the given member-id: consumer-gid-1-9dd39127-5a0c-4328-9721-a12e3b9026a2
+2024-07-09T20:07:59.464-05:00  INFO 9839 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] (Re-)joining group
+2024-07-09T20:07:59.466-05:00  INFO 9839 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Successfully joined group with generation Generation{generationId=96, memberId='consumer-gid-1-9dd39127-5a0c-4328-9721-a12e3b9026a2', protocol='range'}
+2024-07-09T20:07:59.482-05:00  INFO 9839 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Finished assignment for group at generation 96: {consumer-gid-1-9dd39127-5a0c-4328-9721-a12e3b9026a2=Assignment(partitions=[BankApplication-0])}
+2024-07-09T20:07:59.488-05:00  INFO 9839 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Successfully synced group in generation Generation{generationId=96, memberId='consumer-gid-1-9dd39127-5a0c-4328-9721-a12e3b9026a2', protocol='range'}
+2024-07-09T20:07:59.492-05:00  INFO 9839 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Notifying assignor about the new Assignment(partitions=[BankApplication-0])
+2024-07-09T20:07:59.496-05:00  INFO 9839 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-gid-1, groupId=gid] Adding newly assigned partitions: BankApplication-0
+2024-07-09T20:07:59.509-05:00  INFO 9839 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerUtils        : Setting offset for partition BankApplication-0 to the committed offset FetchPosition{offset=4, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[basels-mbp-2.lan:9092 (id: 0 rack: null)], epoch=0}}
+2024-07-09T20:07:59.511-05:00  INFO 9839 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : gid: partitions assigned: [BankApplication-0]
+2024-07-09T20:07:59.667-05:00  INFO 9839 --- [reactor-http-nio-2] bank.logging.Logger                      : createAccount with parameters accountNumber= 1263862 , customerName= Frank Brown
+2024-07-09T20:07:59.732-05:00  INFO 9839 --- [reactor-http-nio-2] bank.logging.Logger                      : createAccount with parameters accountNumber= 4253892 , customerName= John Doe
+2024-07-09T20:07:59.763-05:00  INFO 9839 --- [reactor-http-nio-2] bank.logging.Logger                      : deposit with parameters accountNumber= 1263862 , amount= 240.0
+2024-07-09T20:07:59.807-05:00  INFO 9839 --- [reactor-http-nio-2] bank.logging.Logger                      : deposit with parameters accountNumber= 1263862 , amount= 529.0
+2024-07-09T20:07:59.830-05:00  INFO 9839 --- [reactor-http-nio-2] bank.logging.Logger                      : withdrawEuros with parameters accountNumber= 1263862 , amount= 230.0
+2024-07-09T20:07:59.852-05:00  INFO 9839 --- [reactor-http-nio-2] bank.logging.Logger                      : deposit with parameters accountNumber= 4253892 , amount= 12450.0
+2024-07-09T20:08:00.128-05:00  INFO 9839 --- [reactor-http-nio-2] bank.logging.Logger                      : depositEuros with parameters accountNumber= 4253892 , amount= 200.0
+2024-07-09T20:08:00.164-05:00  INFO 9839 --- [reactor-http-nio-2] bank.logging.Logger                      : transferFunds with parameters fromAccountNumber= 4253892 , toAccountNumber= 1263862 , amount= 100.0 , description= payment of invoice 10232
+2024-07-09T20:08:08.877-05:00  INFO 9839 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-gid-1, groupId=gid] Revoke previously assigned partitions BankApplication-0
+2024-07-09T20:08:08.878-05:00  INFO 9839 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : gid: partitions revoked: [BankApplication-0]
+2024-07-09T20:08:08.879-05:00  INFO 9839 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Member consumer-gid-1-9dd39127-5a0c-4328-9721-a12e3b9026a2 sending LeaveGroup request to coordinator basels-mbp-2.lan:9092 (id: 2147483647 rack: null) due to the consumer unsubscribed from all topics
+2024-07-09T20:08:08.881-05:00  INFO 9839 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-07-09T20:08:08.881-05:00  INFO 9839 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Request joining group due to: consumer pro-actively leaving the group
+2024-07-09T20:08:08.882-05:00  INFO 9839 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.LegacyKafkaConsumer  : [Consumer clientId=consumer-gid-1, groupId=gid] Unsubscribed all topics or patterns and assigned partitions
+2024-07-09T20:08:08.884-05:00  INFO 9839 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-07-09T20:08:08.885-05:00  INFO 9839 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Request joining group due to: consumer pro-actively leaving the group
+2024-07-09T20:08:08.916-05:00  INFO 9839 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2024-07-09T20:08:08.917-05:00  INFO 9839 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-07-09T20:08:08.917-05:00  INFO 9839 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2024-07-09T20:08:08.917-05:00  INFO 9839 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2024-07-09T20:08:08.933-05:00  INFO 9839 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-gid-1 unregistered
+2024-07-09T20:08:08.935-05:00  INFO 9839 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : gid: Consumer stopped
+2024-07-09T20:09:13.573-05:00  INFO 9886 --- [main] bank.Application                         : Starting Application using Java 17.0.11 with PID 9886 (/Users/baselabubaker/Desktop/MIU/EA/Labs/Lab12/Lab12PartA/BankApplication/target/classes started by baselabubaker in /Users/baselabubaker/Desktop/MIU/EA/Labs/Lab12/Lab12PartA/BankApplication)
+2024-07-09T20:09:13.578-05:00  INFO 9886 --- [main] bank.Application                         : No active profile set, falling back to 1 default profile: "default"
+2024-07-09T20:09:14.791-05:00  INFO 9886 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2024-07-09T20:09:14.955-05:00  INFO 9886 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 159 ms. Found 3 MongoDB repository interfaces.
+2024-07-09T20:09:16.129-05:00  INFO 9886 --- [main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync|spring-boot", "version": "5.0.1"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "x86_64", "version": "13.6.7"}, "platform": "Java/Eclipse Adoptium/17.0.11+9"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=null, commandListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsCommandListener@4975dda1], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@439d545c, com.mongodb.Jep395RecordCodecProvider@5a3cf824, com.mongodb.KotlinCodecProvider@7c2b6acb]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsConnectionPoolListener@45d4421d], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null}
+2024-07-09T20:09:16.186-05:00  INFO 9886 --- [cluster-ClusterId{value='668ddf3c8f28f92031bee916', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=21, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=24789195}
+2024-07-09T20:09:17.204-05:00  INFO 9886 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 7 endpoints beneath base path '/actuator'
+2024-07-09T20:09:17.968-05:00  INFO 9886 --- [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8081 (http)
+2024-07-09T20:09:18.036-05:00  INFO 9886 --- [main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-gid-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = gid
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2024-07-09T20:09:18.103-05:00  INFO 9886 --- [main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2024-07-09T20:09:18.265-05:00  INFO 9886 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.7.0
+2024-07-09T20:09:18.267-05:00  INFO 9886 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 2ae524ed625438c5
+2024-07-09T20:09:18.267-05:00  INFO 9886 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1720573758264
+2024-07-09T20:09:18.293-05:00  INFO 9886 --- [main] o.a.k.c.c.internals.LegacyKafkaConsumer  : [Consumer clientId=consumer-gid-1, groupId=gid] Subscribed to topic(s): BankApplication
+2024-07-09T20:09:18.341-05:00  INFO 9886 --- [main] bank.Application                         : Started Application in 5.533 seconds (process running for 6.199)
+2024-07-09T20:09:18.828-05:00  INFO 9886 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-gid-1, groupId=gid] Cluster ID: G1sxKltzR5SKZazj_CFmnQ
+2024-07-09T20:09:18.830-05:00  INFO 9886 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Discovered group coordinator basels-mbp-2.lan:9092 (id: 2147483647 rack: null)
+2024-07-09T20:09:18.839-05:00  INFO 9886 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] (Re-)joining group
+2024-07-09T20:09:18.864-05:00  INFO 9886 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Request joining group due to: need to re-join with the given member-id: consumer-gid-1-d7ed1f67-7888-4db8-8fbe-a6c01bf9d291
+2024-07-09T20:09:18.865-05:00  INFO 9886 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] (Re-)joining group
+2024-07-09T20:09:18.868-05:00  INFO 9886 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Successfully joined group with generation Generation{generationId=98, memberId='consumer-gid-1-d7ed1f67-7888-4db8-8fbe-a6c01bf9d291', protocol='range'}
+2024-07-09T20:09:18.883-05:00  INFO 9886 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Finished assignment for group at generation 98: {consumer-gid-1-d7ed1f67-7888-4db8-8fbe-a6c01bf9d291=Assignment(partitions=[BankApplication-0])}
+2024-07-09T20:09:18.892-05:00  INFO 9886 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Successfully synced group in generation Generation{generationId=98, memberId='consumer-gid-1-d7ed1f67-7888-4db8-8fbe-a6c01bf9d291', protocol='range'}
+2024-07-09T20:09:18.893-05:00  INFO 9886 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Notifying assignor about the new Assignment(partitions=[BankApplication-0])
+2024-07-09T20:09:18.895-05:00  INFO 9886 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-gid-1, groupId=gid] Adding newly assigned partitions: BankApplication-0
+2024-07-09T20:09:18.911-05:00  INFO 9886 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerUtils        : Setting offset for partition BankApplication-0 to the committed offset FetchPosition{offset=4, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[basels-mbp-2.lan:9092 (id: 0 rack: null)], epoch=0}}
+2024-07-09T20:09:18.916-05:00  INFO 9886 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : gid: partitions assigned: [BankApplication-0]
+2024-07-09T20:09:19.088-05:00  INFO 9886 --- [reactor-http-nio-2] bank.logging.Logger                      : createAccount with parameters accountNumber= 1263862 , customerName= Frank Brown
+2024-07-09T20:09:19.162-05:00  INFO 9886 --- [reactor-http-nio-2] bank.logging.Logger                      : createAccount with parameters accountNumber= 4253892 , customerName= John Doe
+2024-07-09T20:09:19.196-05:00  INFO 9886 --- [reactor-http-nio-2] bank.logging.Logger                      : deposit with parameters accountNumber= 1263862 , amount= 240.0
+2024-07-09T20:09:19.245-05:00  INFO 9886 --- [reactor-http-nio-2] bank.logging.Logger                      : deposit with parameters accountNumber= 1263862 , amount= 529.0
+2024-07-09T20:09:19.271-05:00  INFO 9886 --- [reactor-http-nio-2] bank.logging.Logger                      : withdrawEuros with parameters accountNumber= 1263862 , amount= 230.0
+2024-07-09T20:09:19.296-05:00  INFO 9886 --- [reactor-http-nio-2] bank.logging.Logger                      : deposit with parameters accountNumber= 4253892 , amount= 12450.0
+2024-07-09T20:09:19.583-05:00  INFO 9886 --- [reactor-http-nio-2] bank.logging.Logger                      : depositEuros with parameters accountNumber= 4253892 , amount= 200.0
+2024-07-09T20:09:19.629-05:00  INFO 9886 --- [reactor-http-nio-2] bank.logging.Logger                      : transferFunds with parameters fromAccountNumber= 4253892 , toAccountNumber= 1263862 , amount= 100.0 , description= payment of invoice 10232
+2024-07-09T20:09:50.888-05:00  INFO 9886 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-gid-1, groupId=gid] Revoke previously assigned partitions BankApplication-0
+2024-07-09T20:09:50.889-05:00  INFO 9886 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : gid: partitions revoked: [BankApplication-0]
+2024-07-09T20:09:50.890-05:00  INFO 9886 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Member consumer-gid-1-d7ed1f67-7888-4db8-8fbe-a6c01bf9d291 sending LeaveGroup request to coordinator basels-mbp-2.lan:9092 (id: 2147483647 rack: null) due to the consumer unsubscribed from all topics
+2024-07-09T20:09:50.891-05:00  INFO 9886 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-07-09T20:09:50.891-05:00  INFO 9886 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Request joining group due to: consumer pro-actively leaving the group
+2024-07-09T20:09:50.892-05:00  INFO 9886 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.LegacyKafkaConsumer  : [Consumer clientId=consumer-gid-1, groupId=gid] Unsubscribed all topics or patterns and assigned partitions
+2024-07-09T20:09:50.894-05:00  INFO 9886 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-07-09T20:09:50.895-05:00  INFO 9886 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Request joining group due to: consumer pro-actively leaving the group
+2024-07-09T20:09:50.935-05:00  INFO 9886 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2024-07-09T20:09:50.935-05:00  INFO 9886 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-07-09T20:09:50.936-05:00  INFO 9886 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2024-07-09T20:09:50.937-05:00  INFO 9886 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2024-07-09T20:09:50.951-05:00  INFO 9886 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-gid-1 unregistered
+2024-07-09T20:09:50.952-05:00  INFO 9886 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : gid: Consumer stopped
+2024-07-09T20:12:21.287-05:00  INFO 9984 --- [main] bank.Application                         : Starting Application using Java 17.0.11 with PID 9984 (/Users/baselabubaker/Desktop/MIU/EA/Labs/Lab12/Lab12PartA/BankApplication/target/classes started by baselabubaker in /Users/baselabubaker/Desktop/MIU/EA/Labs/Lab12/Lab12PartA/BankApplication)
+2024-07-09T20:12:21.291-05:00  INFO 9984 --- [main] bank.Application                         : No active profile set, falling back to 1 default profile: "default"
+2024-07-09T20:12:22.687-05:00  INFO 9984 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2024-07-09T20:12:22.854-05:00  INFO 9984 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 162 ms. Found 3 MongoDB repository interfaces.
+2024-07-09T20:12:24.019-05:00  INFO 9984 --- [main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync|spring-boot", "version": "5.0.1"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "x86_64", "version": "13.6.7"}, "platform": "Java/Eclipse Adoptium/17.0.11+9"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=null, commandListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsCommandListener@418f0534], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@59a09be, com.mongodb.Jep395RecordCodecProvider@790ac3e0, com.mongodb.KotlinCodecProvider@5bb2fb2b]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsConnectionPoolListener@5c1b89ac], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null}
+2024-07-09T20:12:24.081-05:00  INFO 9984 --- [cluster-ClusterId{value='668ddff7719f09664bcb9279', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=21, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=38591030}
+2024-07-09T20:12:25.093-05:00  INFO 9984 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 5 endpoints beneath base path '/actuator'
+2024-07-09T20:12:25.759-05:00  INFO 9984 --- [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8081 (http)
+2024-07-09T20:12:25.816-05:00  INFO 9984 --- [main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-gid-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = gid
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2024-07-09T20:12:25.869-05:00  INFO 9984 --- [main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2024-07-09T20:12:26.009-05:00  INFO 9984 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.7.0
+2024-07-09T20:12:26.011-05:00  INFO 9984 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 2ae524ed625438c5
+2024-07-09T20:12:26.011-05:00  INFO 9984 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1720573946008
+2024-07-09T20:12:26.030-05:00  INFO 9984 --- [main] o.a.k.c.c.internals.LegacyKafkaConsumer  : [Consumer clientId=consumer-gid-1, groupId=gid] Subscribed to topic(s): BankApplication
+2024-07-09T20:12:26.064-05:00  INFO 9984 --- [main] bank.Application                         : Started Application in 5.526 seconds (process running for 6.157)
+2024-07-09T20:12:26.510-05:00  INFO 9984 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-gid-1, groupId=gid] Cluster ID: G1sxKltzR5SKZazj_CFmnQ
+2024-07-09T20:12:26.512-05:00  INFO 9984 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Discovered group coordinator basels-mbp-2.lan:9092 (id: 2147483647 rack: null)
+2024-07-09T20:12:26.522-05:00  INFO 9984 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] (Re-)joining group
+2024-07-09T20:12:26.549-05:00  INFO 9984 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Request joining group due to: need to re-join with the given member-id: consumer-gid-1-f987081c-63b9-4845-8634-35d9ddfee45a
+2024-07-09T20:12:26.550-05:00  INFO 9984 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] (Re-)joining group
+2024-07-09T20:12:26.554-05:00  INFO 9984 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Successfully joined group with generation Generation{generationId=100, memberId='consumer-gid-1-f987081c-63b9-4845-8634-35d9ddfee45a', protocol='range'}
+2024-07-09T20:12:26.568-05:00  INFO 9984 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Finished assignment for group at generation 100: {consumer-gid-1-f987081c-63b9-4845-8634-35d9ddfee45a=Assignment(partitions=[BankApplication-0])}
+2024-07-09T20:12:26.576-05:00  INFO 9984 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Successfully synced group in generation Generation{generationId=100, memberId='consumer-gid-1-f987081c-63b9-4845-8634-35d9ddfee45a', protocol='range'}
+2024-07-09T20:12:26.577-05:00  INFO 9984 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Notifying assignor about the new Assignment(partitions=[BankApplication-0])
+2024-07-09T20:12:26.582-05:00  INFO 9984 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-gid-1, groupId=gid] Adding newly assigned partitions: BankApplication-0
+2024-07-09T20:12:26.598-05:00  INFO 9984 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerUtils        : Setting offset for partition BankApplication-0 to the committed offset FetchPosition{offset=4, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[basels-mbp-2.lan:9092 (id: 0 rack: null)], epoch=0}}
+2024-07-09T20:12:26.601-05:00  INFO 9984 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : gid: partitions assigned: [BankApplication-0]
+2024-07-09T20:12:26.799-05:00  INFO 9984 --- [reactor-http-nio-2] bank.logging.Logger                      : createAccount with parameters accountNumber= 1263862 , customerName= Frank Brown
+2024-07-09T20:12:26.864-05:00  INFO 9984 --- [reactor-http-nio-2] bank.logging.Logger                      : createAccount with parameters accountNumber= 4253892 , customerName= John Doe
+2024-07-09T20:12:26.893-05:00  INFO 9984 --- [reactor-http-nio-2] bank.logging.Logger                      : deposit with parameters accountNumber= 1263862 , amount= 240.0
+2024-07-09T20:12:26.934-05:00  INFO 9984 --- [reactor-http-nio-2] bank.logging.Logger                      : deposit with parameters accountNumber= 1263862 , amount= 529.0
+2024-07-09T20:12:26.956-05:00  INFO 9984 --- [reactor-http-nio-2] bank.logging.Logger                      : withdrawEuros with parameters accountNumber= 1263862 , amount= 230.0
+2024-07-09T20:12:26.976-05:00  INFO 9984 --- [reactor-http-nio-2] bank.logging.Logger                      : deposit with parameters accountNumber= 4253892 , amount= 12450.0
+2024-07-09T20:12:27.255-05:00  INFO 9984 --- [reactor-http-nio-2] bank.logging.Logger                      : depositEuros with parameters accountNumber= 4253892 , amount= 200.0
+2024-07-09T20:12:27.291-05:00  INFO 9984 --- [reactor-http-nio-2] bank.logging.Logger                      : transferFunds with parameters fromAccountNumber= 4253892 , toAccountNumber= 1263862 , amount= 100.0 , description= payment of invoice 10232
+2024-07-09T20:13:44.677-05:00  INFO 9984 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-gid-1, groupId=gid] Revoke previously assigned partitions BankApplication-0
+2024-07-09T20:13:44.681-05:00  INFO 9984 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : gid: partitions revoked: [BankApplication-0]
+2024-07-09T20:13:44.682-05:00  INFO 9984 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Member consumer-gid-1-f987081c-63b9-4845-8634-35d9ddfee45a sending LeaveGroup request to coordinator basels-mbp-2.lan:9092 (id: 2147483647 rack: null) due to the consumer unsubscribed from all topics
+2024-07-09T20:13:44.683-05:00  INFO 9984 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-07-09T20:13:44.683-05:00  INFO 9984 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Request joining group due to: consumer pro-actively leaving the group
+2024-07-09T20:13:44.684-05:00  INFO 9984 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.LegacyKafkaConsumer  : [Consumer clientId=consumer-gid-1, groupId=gid] Unsubscribed all topics or patterns and assigned partitions
+2024-07-09T20:13:44.687-05:00  INFO 9984 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-07-09T20:13:44.687-05:00  INFO 9984 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Request joining group due to: consumer pro-actively leaving the group
+2024-07-09T20:13:44.714-05:00  INFO 9984 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2024-07-09T20:13:44.714-05:00  INFO 9984 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-07-09T20:13:44.715-05:00  INFO 9984 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2024-07-09T20:13:44.715-05:00  INFO 9984 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2024-07-09T20:13:44.731-05:00  INFO 9984 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-gid-1 unregistered
+2024-07-09T20:13:44.732-05:00  INFO 9984 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : gid: Consumer stopped
+2024-07-09T20:13:49.593-05:00  INFO 10048 --- [main] bank.Application                         : Starting Application using Java 17.0.11 with PID 10048 (/Users/baselabubaker/Desktop/MIU/EA/Labs/Lab12/Lab12PartA/BankApplication/target/classes started by baselabubaker in /Users/baselabubaker/Desktop/MIU/EA/Labs/Lab12/Lab12PartA/BankApplication)
+2024-07-09T20:13:49.596-05:00  INFO 10048 --- [main] bank.Application                         : No active profile set, falling back to 1 default profile: "default"
+2024-07-09T20:13:50.767-05:00  INFO 10048 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2024-07-09T20:13:50.940-05:00  INFO 10048 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 166 ms. Found 3 MongoDB repository interfaces.
+2024-07-09T20:13:52.068-05:00  INFO 10048 --- [main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync|spring-boot", "version": "5.0.1"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "x86_64", "version": "13.6.7"}, "platform": "Java/Eclipse Adoptium/17.0.11+9"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=null, commandListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsCommandListener@1ec88aa1], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@1a7163e3, com.mongodb.Jep395RecordCodecProvider@44da7eb3, com.mongodb.KotlinCodecProvider@5e69cf07]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsConnectionPoolListener@682618e5], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null}
+2024-07-09T20:13:52.132-05:00  INFO 10048 --- [cluster-ClusterId{value='668de04f1e7fab14d8dd31e7', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=21, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=36931524}
+2024-07-09T20:13:53.054-05:00  INFO 10048 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 5 endpoints beneath base path '/actuator'
+2024-07-09T20:13:53.747-05:00  INFO 10048 --- [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8081 (http)
+2024-07-09T20:13:53.799-05:00  INFO 10048 --- [main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-gid-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = gid
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2024-07-09T20:13:53.856-05:00  INFO 10048 --- [main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2024-07-09T20:13:54.008-05:00  INFO 10048 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.7.0
+2024-07-09T20:13:54.010-05:00  INFO 10048 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 2ae524ed625438c5
+2024-07-09T20:13:54.010-05:00  INFO 10048 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1720574034007
+2024-07-09T20:13:54.029-05:00  INFO 10048 --- [main] o.a.k.c.c.internals.LegacyKafkaConsumer  : [Consumer clientId=consumer-gid-1, groupId=gid] Subscribed to topic(s): BankApplication
+2024-07-09T20:13:54.064-05:00  INFO 10048 --- [main] bank.Application                         : Started Application in 5.044 seconds (process running for 5.951)
+2024-07-09T20:13:54.499-05:00  INFO 10048 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-gid-1, groupId=gid] Cluster ID: G1sxKltzR5SKZazj_CFmnQ
+2024-07-09T20:13:54.545-05:00  INFO 10048 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Discovered group coordinator basels-mbp-2.lan:9092 (id: 2147483647 rack: null)
+2024-07-09T20:13:54.549-05:00  INFO 10048 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] (Re-)joining group
+2024-07-09T20:13:54.570-05:00  INFO 10048 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Request joining group due to: need to re-join with the given member-id: consumer-gid-1-c56a08e0-56f7-4ae3-91d6-f2cfad2b123c
+2024-07-09T20:13:54.571-05:00  INFO 10048 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] (Re-)joining group
+2024-07-09T20:13:54.574-05:00  INFO 10048 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Successfully joined group with generation Generation{generationId=102, memberId='consumer-gid-1-c56a08e0-56f7-4ae3-91d6-f2cfad2b123c', protocol='range'}
+2024-07-09T20:13:54.586-05:00  INFO 10048 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Finished assignment for group at generation 102: {consumer-gid-1-c56a08e0-56f7-4ae3-91d6-f2cfad2b123c=Assignment(partitions=[BankApplication-0])}
+2024-07-09T20:13:54.593-05:00  INFO 10048 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Successfully synced group in generation Generation{generationId=102, memberId='consumer-gid-1-c56a08e0-56f7-4ae3-91d6-f2cfad2b123c', protocol='range'}
+2024-07-09T20:13:54.594-05:00  INFO 10048 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Notifying assignor about the new Assignment(partitions=[BankApplication-0])
+2024-07-09T20:13:54.600-05:00  INFO 10048 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-gid-1, groupId=gid] Adding newly assigned partitions: BankApplication-0
+2024-07-09T20:13:54.610-05:00  INFO 10048 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerUtils        : Setting offset for partition BankApplication-0 to the committed offset FetchPosition{offset=4, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[basels-mbp-2.lan:9092 (id: 0 rack: null)], epoch=0}}
+2024-07-09T20:13:54.614-05:00  INFO 10048 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : gid: partitions assigned: [BankApplication-0]
+2024-07-09T20:13:54.746-05:00  INFO 10048 --- [reactor-http-nio-2] bank.logging.Logger                      : createAccount with parameters accountNumber= 1263862 , customerName= Frank Brown
+2024-07-09T20:13:54.815-05:00  INFO 10048 --- [reactor-http-nio-2] bank.logging.Logger                      : createAccount with parameters accountNumber= 4253892 , customerName= John Doe
+2024-07-09T20:13:54.846-05:00  INFO 10048 --- [reactor-http-nio-2] bank.logging.Logger                      : deposit with parameters accountNumber= 1263862 , amount= 240.0
+2024-07-09T20:13:54.893-05:00  INFO 10048 --- [reactor-http-nio-2] bank.logging.Logger                      : deposit with parameters accountNumber= 1263862 , amount= 529.0
+2024-07-09T20:13:54.915-05:00  INFO 10048 --- [reactor-http-nio-2] bank.logging.Logger                      : withdrawEuros with parameters accountNumber= 1263862 , amount= 230.0
+2024-07-09T20:13:54.936-05:00  INFO 10048 --- [reactor-http-nio-2] bank.logging.Logger                      : deposit with parameters accountNumber= 4253892 , amount= 12450.0
+2024-07-09T20:13:55.193-05:00  INFO 10048 --- [reactor-http-nio-2] bank.logging.Logger                      : depositEuros with parameters accountNumber= 4253892 , amount= 200.0
+2024-07-09T20:13:55.229-05:00  INFO 10048 --- [reactor-http-nio-2] bank.logging.Logger                      : transferFunds with parameters fromAccountNumber= 4253892 , toAccountNumber= 1263862 , amount= 100.0 , description= payment of invoice 10232
+2024-07-09T20:14:48.755-05:00  INFO 10048 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-gid-1, groupId=gid] Revoke previously assigned partitions BankApplication-0
+2024-07-09T20:14:48.756-05:00  INFO 10048 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : gid: partitions revoked: [BankApplication-0]
+2024-07-09T20:14:48.756-05:00  INFO 10048 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Member consumer-gid-1-c56a08e0-56f7-4ae3-91d6-f2cfad2b123c sending LeaveGroup request to coordinator basels-mbp-2.lan:9092 (id: 2147483647 rack: null) due to the consumer unsubscribed from all topics
+2024-07-09T20:14:48.759-05:00  INFO 10048 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-07-09T20:14:48.761-05:00  INFO 10048 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Request joining group due to: consumer pro-actively leaving the group
+2024-07-09T20:14:48.761-05:00  INFO 10048 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.LegacyKafkaConsumer  : [Consumer clientId=consumer-gid-1, groupId=gid] Unsubscribed all topics or patterns and assigned partitions
+2024-07-09T20:14:48.765-05:00  INFO 10048 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-07-09T20:14:48.767-05:00  INFO 10048 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Request joining group due to: consumer pro-actively leaving the group
+2024-07-09T20:14:48.950-05:00  INFO 10048 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2024-07-09T20:14:48.951-05:00  INFO 10048 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-07-09T20:14:48.951-05:00  INFO 10048 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2024-07-09T20:14:48.951-05:00  INFO 10048 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2024-07-09T20:14:48.960-05:00  INFO 10048 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-gid-1 unregistered
+2024-07-09T20:14:48.962-05:00  INFO 10048 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : gid: Consumer stopped
+2024-07-09T20:14:56.019-05:00  INFO 10105 --- [main] bank.Application                         : Starting Application using Java 17.0.11 with PID 10105 (/Users/baselabubaker/Desktop/MIU/EA/Labs/Lab12/Lab12PartA/BankApplication/target/classes started by baselabubaker in /Users/baselabubaker/Desktop/MIU/EA/Labs/Lab12/Lab12PartA/BankApplication)
+2024-07-09T20:14:56.023-05:00  INFO 10105 --- [main] bank.Application                         : No active profile set, falling back to 1 default profile: "default"
+2024-07-09T20:14:57.247-05:00  INFO 10105 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2024-07-09T20:14:57.421-05:00  INFO 10105 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 168 ms. Found 3 MongoDB repository interfaces.
+2024-07-09T20:14:58.591-05:00  INFO 10105 --- [main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync|spring-boot", "version": "5.0.1"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "x86_64", "version": "13.6.7"}, "platform": "Java/Eclipse Adoptium/17.0.11+9"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=null, commandListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsCommandListener@1a2773a8], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@6121a7dd, com.mongodb.Jep395RecordCodecProvider@31228d83, com.mongodb.KotlinCodecProvider@22b82ddf]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsConnectionPoolListener@71b97eeb], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null}
+2024-07-09T20:14:58.658-05:00  INFO 10105 --- [cluster-ClusterId{value='668de092c79ec374b19d9379', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=21, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=22838528}
+2024-07-09T20:14:59.630-05:00  INFO 10105 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoints beneath base path '/actuator'
+2024-07-09T20:15:00.309-05:00  INFO 10105 --- [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8081 (http)
+2024-07-09T20:15:00.358-05:00  INFO 10105 --- [main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-gid-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = gid
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2024-07-09T20:15:00.411-05:00  INFO 10105 --- [main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2024-07-09T20:15:00.553-05:00  INFO 10105 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.7.0
+2024-07-09T20:15:00.555-05:00  INFO 10105 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 2ae524ed625438c5
+2024-07-09T20:15:00.555-05:00  INFO 10105 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1720574100552
+2024-07-09T20:15:00.573-05:00  INFO 10105 --- [main] o.a.k.c.c.internals.LegacyKafkaConsumer  : [Consumer clientId=consumer-gid-1, groupId=gid] Subscribed to topic(s): BankApplication
+2024-07-09T20:15:00.606-05:00  INFO 10105 --- [main] bank.Application                         : Started Application in 5.268 seconds (process running for 6.173)
+2024-07-09T20:15:01.078-05:00  INFO 10105 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-gid-1, groupId=gid] Cluster ID: G1sxKltzR5SKZazj_CFmnQ
+2024-07-09T20:15:01.079-05:00  INFO 10105 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Discovered group coordinator basels-mbp-2.lan:9092 (id: 2147483647 rack: null)
+2024-07-09T20:15:01.092-05:00  INFO 10105 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] (Re-)joining group
+2024-07-09T20:15:01.112-05:00  INFO 10105 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Request joining group due to: need to re-join with the given member-id: consumer-gid-1-9fe6c85a-65b7-4275-a348-38d2982772b5
+2024-07-09T20:15:01.114-05:00  INFO 10105 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] (Re-)joining group
+2024-07-09T20:15:01.119-05:00  INFO 10105 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Successfully joined group with generation Generation{generationId=104, memberId='consumer-gid-1-9fe6c85a-65b7-4275-a348-38d2982772b5', protocol='range'}
+2024-07-09T20:15:01.134-05:00  INFO 10105 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Finished assignment for group at generation 104: {consumer-gid-1-9fe6c85a-65b7-4275-a348-38d2982772b5=Assignment(partitions=[BankApplication-0])}
+2024-07-09T20:15:01.139-05:00  INFO 10105 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Successfully synced group in generation Generation{generationId=104, memberId='consumer-gid-1-9fe6c85a-65b7-4275-a348-38d2982772b5', protocol='range'}
+2024-07-09T20:15:01.141-05:00  INFO 10105 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Notifying assignor about the new Assignment(partitions=[BankApplication-0])
+2024-07-09T20:15:01.145-05:00  INFO 10105 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-gid-1, groupId=gid] Adding newly assigned partitions: BankApplication-0
+2024-07-09T20:15:01.158-05:00  INFO 10105 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerUtils        : Setting offset for partition BankApplication-0 to the committed offset FetchPosition{offset=4, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[basels-mbp-2.lan:9092 (id: 0 rack: null)], epoch=0}}
+2024-07-09T20:15:01.163-05:00  INFO 10105 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : gid: partitions assigned: [BankApplication-0]
+2024-07-09T20:15:01.328-05:00  INFO 10105 --- [reactor-http-nio-2] bank.logging.Logger                      : createAccount with parameters accountNumber= 1263862 , customerName= Frank Brown
+2024-07-09T20:15:01.392-05:00  INFO 10105 --- [reactor-http-nio-2] bank.logging.Logger                      : createAccount with parameters accountNumber= 4253892 , customerName= John Doe
+2024-07-09T20:15:01.423-05:00  INFO 10105 --- [reactor-http-nio-2] bank.logging.Logger                      : deposit with parameters accountNumber= 1263862 , amount= 240.0
+2024-07-09T20:15:01.463-05:00  INFO 10105 --- [reactor-http-nio-2] bank.logging.Logger                      : deposit with parameters accountNumber= 1263862 , amount= 529.0
+2024-07-09T20:15:01.487-05:00  INFO 10105 --- [reactor-http-nio-2] bank.logging.Logger                      : withdrawEuros with parameters accountNumber= 1263862 , amount= 230.0
+2024-07-09T20:15:01.508-05:00  INFO 10105 --- [reactor-http-nio-2] bank.logging.Logger                      : deposit with parameters accountNumber= 4253892 , amount= 12450.0
+2024-07-09T20:15:01.797-05:00  INFO 10105 --- [reactor-http-nio-2] bank.logging.Logger                      : depositEuros with parameters accountNumber= 4253892 , amount= 200.0
+2024-07-09T20:15:01.836-05:00  INFO 10105 --- [reactor-http-nio-2] bank.logging.Logger                      : transferFunds with parameters fromAccountNumber= 4253892 , toAccountNumber= 1263862 , amount= 100.0 , description= payment of invoice 10232
+2024-07-09T20:15:52.431-05:00  INFO 10105 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-gid-1, groupId=gid] Revoke previously assigned partitions BankApplication-0
+2024-07-09T20:15:52.432-05:00  INFO 10105 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : gid: partitions revoked: [BankApplication-0]
+2024-07-09T20:15:52.433-05:00  INFO 10105 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Member consumer-gid-1-9fe6c85a-65b7-4275-a348-38d2982772b5 sending LeaveGroup request to coordinator basels-mbp-2.lan:9092 (id: 2147483647 rack: null) due to the consumer unsubscribed from all topics
+2024-07-09T20:15:52.435-05:00  INFO 10105 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-07-09T20:15:52.435-05:00  INFO 10105 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Request joining group due to: consumer pro-actively leaving the group
+2024-07-09T20:15:52.435-05:00  INFO 10105 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.LegacyKafkaConsumer  : [Consumer clientId=consumer-gid-1, groupId=gid] Unsubscribed all topics or patterns and assigned partitions
+2024-07-09T20:15:52.438-05:00  INFO 10105 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-07-09T20:15:52.438-05:00  INFO 10105 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Request joining group due to: consumer pro-actively leaving the group
+2024-07-09T20:15:52.876-05:00  INFO 10105 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2024-07-09T20:15:52.876-05:00  INFO 10105 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-07-09T20:15:52.876-05:00  INFO 10105 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2024-07-09T20:15:52.877-05:00  INFO 10105 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2024-07-09T20:15:52.903-05:00  INFO 10105 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-gid-1 unregistered
+2024-07-09T20:15:52.905-05:00  INFO 10105 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : gid: Consumer stopped
+2024-07-09T20:15:56.588-05:00  INFO 10151 --- [main] bank.Application                         : Starting Application using Java 17.0.11 with PID 10151 (/Users/baselabubaker/Desktop/MIU/EA/Labs/Lab12/Lab12PartA/BankApplication/target/classes started by baselabubaker in /Users/baselabubaker/Desktop/MIU/EA/Labs/Lab12/Lab12PartA/BankApplication)
+2024-07-09T20:15:56.591-05:00  INFO 10151 --- [main] bank.Application                         : No active profile set, falling back to 1 default profile: "default"
+2024-07-09T20:15:57.832-05:00  INFO 10151 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2024-07-09T20:15:58.000-05:00  INFO 10151 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 161 ms. Found 3 MongoDB repository interfaces.
+2024-07-09T20:15:59.304-05:00  INFO 10151 --- [main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync|spring-boot", "version": "5.0.1"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "x86_64", "version": "13.6.7"}, "platform": "Java/Eclipse Adoptium/17.0.11+9"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=null, commandListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsCommandListener@5b742bc8], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@7a1371, com.mongodb.Jep395RecordCodecProvider@6c6928c, com.mongodb.KotlinCodecProvider@3c28181b]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsConnectionPoolListener@407b8435], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null}
+2024-07-09T20:15:59.370-05:00  INFO 10151 --- [cluster-ClusterId{value='668de0cfd66cfe757b04c621', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=21, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=42620081}
+2024-07-09T20:16:00.369-05:00  INFO 10151 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 6 endpoints beneath base path '/actuator'
+2024-07-09T20:16:02.248-05:00  INFO 10151 --- [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8081 (http)
+2024-07-09T20:16:02.313-05:00  INFO 10151 --- [main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-gid-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = gid
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2024-07-09T20:16:02.402-05:00  INFO 10151 --- [main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2024-07-09T20:16:02.662-05:00  INFO 10151 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.7.0
+2024-07-09T20:16:02.665-05:00  INFO 10151 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 2ae524ed625438c5
+2024-07-09T20:16:02.666-05:00  INFO 10151 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1720574162658
+2024-07-09T20:16:02.699-05:00  INFO 10151 --- [main] o.a.k.c.c.internals.LegacyKafkaConsumer  : [Consumer clientId=consumer-gid-1, groupId=gid] Subscribed to topic(s): BankApplication
+2024-07-09T20:16:02.746-05:00  INFO 10151 --- [main] bank.Application                         : Started Application in 6.689 seconds (process running for 7.214)
+2024-07-09T20:16:03.320-05:00  INFO 10151 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-gid-1, groupId=gid] Cluster ID: G1sxKltzR5SKZazj_CFmnQ
+2024-07-09T20:16:03.322-05:00  INFO 10151 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Discovered group coordinator basels-mbp-2.lan:9092 (id: 2147483647 rack: null)
+2024-07-09T20:16:03.331-05:00  INFO 10151 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] (Re-)joining group
+2024-07-09T20:16:03.352-05:00  INFO 10151 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Request joining group due to: need to re-join with the given member-id: consumer-gid-1-4f17f576-a1a0-484b-b607-227e56088d53
+2024-07-09T20:16:03.354-05:00  INFO 10151 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] (Re-)joining group
+2024-07-09T20:16:03.357-05:00  INFO 10151 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Successfully joined group with generation Generation{generationId=106, memberId='consumer-gid-1-4f17f576-a1a0-484b-b607-227e56088d53', protocol='range'}
+2024-07-09T20:16:03.370-05:00  INFO 10151 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Finished assignment for group at generation 106: {consumer-gid-1-4f17f576-a1a0-484b-b607-227e56088d53=Assignment(partitions=[BankApplication-0])}
+2024-07-09T20:16:03.378-05:00  INFO 10151 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Successfully synced group in generation Generation{generationId=106, memberId='consumer-gid-1-4f17f576-a1a0-484b-b607-227e56088d53', protocol='range'}
+2024-07-09T20:16:03.379-05:00  INFO 10151 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Notifying assignor about the new Assignment(partitions=[BankApplication-0])
+2024-07-09T20:16:03.383-05:00  INFO 10151 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-gid-1, groupId=gid] Adding newly assigned partitions: BankApplication-0
+2024-07-09T20:16:03.394-05:00  INFO 10151 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerUtils        : Setting offset for partition BankApplication-0 to the committed offset FetchPosition{offset=4, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[basels-mbp-2.lan:9092 (id: 0 rack: null)], epoch=0}}
+2024-07-09T20:16:03.396-05:00  INFO 10151 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : gid: partitions assigned: [BankApplication-0]
+2024-07-09T20:16:03.550-05:00  INFO 10151 --- [reactor-http-nio-2] bank.logging.Logger                      : createAccount with parameters accountNumber= 1263862 , customerName= Frank Brown
+2024-07-09T20:16:03.636-05:00  INFO 10151 --- [reactor-http-nio-2] bank.logging.Logger                      : createAccount with parameters accountNumber= 4253892 , customerName= John Doe
+2024-07-09T20:16:03.665-05:00  INFO 10151 --- [reactor-http-nio-2] bank.logging.Logger                      : deposit with parameters accountNumber= 1263862 , amount= 240.0
+2024-07-09T20:16:03.706-05:00  INFO 10151 --- [reactor-http-nio-2] bank.logging.Logger                      : deposit with parameters accountNumber= 1263862 , amount= 529.0
+2024-07-09T20:16:03.727-05:00  INFO 10151 --- [reactor-http-nio-2] bank.logging.Logger                      : withdrawEuros with parameters accountNumber= 1263862 , amount= 230.0
+2024-07-09T20:16:03.745-05:00  INFO 10151 --- [reactor-http-nio-2] bank.logging.Logger                      : deposit with parameters accountNumber= 4253892 , amount= 12450.0
+2024-07-09T20:16:04.087-05:00  INFO 10151 --- [reactor-http-nio-2] bank.logging.Logger                      : depositEuros with parameters accountNumber= 4253892 , amount= 200.0
+2024-07-09T20:16:04.132-05:00  INFO 10151 --- [reactor-http-nio-2] bank.logging.Logger                      : transferFunds with parameters fromAccountNumber= 4253892 , toAccountNumber= 1263862 , amount= 100.0 , description= payment of invoice 10232
+2024-07-09T20:16:23.018-05:00  INFO 10151 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-gid-1, groupId=gid] Revoke previously assigned partitions BankApplication-0
+2024-07-09T20:16:23.019-05:00  INFO 10151 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : gid: partitions revoked: [BankApplication-0]
+2024-07-09T20:16:23.019-05:00  INFO 10151 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Member consumer-gid-1-4f17f576-a1a0-484b-b607-227e56088d53 sending LeaveGroup request to coordinator basels-mbp-2.lan:9092 (id: 2147483647 rack: null) due to the consumer unsubscribed from all topics
+2024-07-09T20:16:23.020-05:00  INFO 10151 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-07-09T20:16:23.020-05:00  INFO 10151 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Request joining group due to: consumer pro-actively leaving the group
+2024-07-09T20:16:23.020-05:00  INFO 10151 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.LegacyKafkaConsumer  : [Consumer clientId=consumer-gid-1, groupId=gid] Unsubscribed all topics or patterns and assigned partitions
+2024-07-09T20:16:23.023-05:00  INFO 10151 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-07-09T20:16:23.023-05:00  INFO 10151 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-gid-1, groupId=gid] Request joining group due to: consumer pro-actively leaving the group
+2024-07-09T20:16:23.508-05:00  INFO 10151 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2024-07-09T20:16:23.508-05:00  INFO 10151 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-07-09T20:16:23.508-05:00  INFO 10151 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2024-07-09T20:16:23.509-05:00  INFO 10151 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2024-07-09T20:16:23.517-05:00  INFO 10151 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-gid-1 unregistered
+2024-07-09T20:16:23.518-05:00  INFO 10151 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : gid: Consumer stopped
